@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Service Portal — Sahil Kundal</title>
+<meta name="description" content="A role-based portal for external service partners to accept work, manage service obligations and stay compatible with the internal operations model without inheriting its complexity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDEEE9; --panel:#F6F6F2; --ink:#1A1F27; --soft:#565D68;
+  --line:#C9CCC5; --coral:#E8542E; --sage:#5C7A72; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;line-height:1.65}
+h1,h2,h3,h4,.display{font-family:'Space Grotesk',sans-serif;letter-spacing:-.015em;line-height:1.08}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 48px}
+.case{max-width:900px;margin:0 auto;padding:64px 48px 120px}
+header{position:sticky;top:0;z-index:30;background:rgba(237,238,233,.9);backdrop-filter:blur(7px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:0 auto;padding:18px 48px;display:flex;justify-content:space-between;align-items:center}
+.brand{font:600 17px 'Space Grotesk',sans-serif;text-decoration:none}.brand b{color:var(--coral)}
+.nav a{font-size:14px;text-decoration:none;color:var(--soft)}
+.back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--soft);font-size:14px;margin-bottom:40px}
+.back:hover{color:var(--coral)}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sage)}
+h1{font-size:clamp(38px,6vw,66px);max-width:15ch;margin-top:14px}
+.lede{font-size:20px;color:var(--soft);max-width:60ch;margin-top:20px}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meta .label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
+.meta .value{font-size:15px;font-weight:500;margin-top:5px}
+.hero-media{margin:42px 0 0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
+.hero-media img{width:100%;display:block}
+.assumption{margin-top:14px;font-size:12.5px;color:var(--soft)}
+.section{margin-top:72px}
+.num{font:600 13px 'Space Grotesk',sans-serif;color:var(--coral)}
+.section h2{font-size:clamp(26px,3.5vw,38px);margin:10px 0 20px}
+.section h3{font-size:20px;margin:28px 0 10px}
+.section p{font-size:16.5px;color:var(--soft);margin-bottom:16px;max-width:70ch}
+.section strong{color:var(--ink)}
+.quote{border-left:3px solid var(--coral);padding-left:22px;margin:28px 0;font:500 21px/1.35 'Space Grotesk',sans-serif;max-width:62ch}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.card{background:var(--panel);border:1px solid var(--line);padding:20px}
+.card .eyebrow{font-size:11px;color:var(--coral);font-weight:600;letter-spacing:.05em}
+.card h3{font-size:16px;margin:8px 0 7px}.card p{font-size:13.5px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.stat{background:var(--panel);border:1px solid var(--line);padding:22px}
+.stat .v{font:600 30px 'Space Grotesk',sans-serif;color:var(--coral)}
+.stat .l{font-size:13px;color:var(--soft);margin-top:4px}
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
+figure{border:1px solid var(--line);background:var(--panel);overflow:hidden}
+figure img{width:100%;display:block} figcaption{border-top:1px solid var(--line);padding:10px 12px;font-size:12px;color:var(--soft)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
+.flow div{border:1px solid var(--line);background:var(--panel);padding:14px;font-size:13px}
+.flow b{display:block;color:var(--coral);font-size:11px;margin-bottom:4px}
+.decision{margin:28px 0;padding:24px;border:1px solid var(--line);background:var(--panel)}
+.decision .dlabel{font-size:11px;color:var(--sage);font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+.decision h3{margin:8px 0 10px}.decision p:last-child{margin-bottom:0}
+.note{font-size:13px;color:var(--soft);font-style:italic}
+.next{margin-top:82px;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.btn{display:inline-flex;padding:12px 18px;border:1px solid var(--ink);text-decoration:none;font-size:14px}
+.btn:hover{background:var(--ink);color:var(--bg)}
+footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);font-size:13px}
+@media(max-width:760px){
+ .wrap,.case,.nav{padding-left:24px;padding-right:24px}
+ .meta{grid-template-columns:1fr 1fr}.grid3,.stats,.media-grid,.flow{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="index.html">SK<b>.</b>UX</a><a href="index.html#/work">All work</a></div></header>
+<main class="case">
+<a class="back" href="index.html#/work">← Back to work</a>
+<div class="kicker">Case study · B2B platform · Onsitego</div>
+<h1>Partner Service Portal</h1>
+<p class="lede">A role-based portal for external service partners to accept work, manage service obligations and stay compatible with the internal operations model without inheriting its complexity.</p>
+<div class="meta"><div><div class="label">My Role</div><div class="value">Product / UX Designer</div></div><div><div class="label">Users</div><div class="value">Service partners</div></div><div><div class="label">Timeline</div><div class="value">Assumed 10–14 weeks</div></div><div><div class="label">Surface</div><div class="value">Responsive web</div></div></div>
+<figure class="hero-media"><img src="case-study-assets/partner-sketch-1.webp" alt=""><figcaption>Early portal exploration from the Partner Portal project.</figcaption></figure>
+<p class="assumption">Because of company policy and NDA constraints, some end-to-end screens and analytics cannot be shown. The case study focuses on the problem, research, design decisions, and selected interface glimpses.</p>
+
+<section class="section">
+<div class="num">01</div><h2>Context: extend the service operation beyond the company boundary</h2>
+<p>The <strong>Partner portal</strong> archive contains early paper sketches, partner/brand references, service-category imagery and Onsitego sign-in/context assets. I read this as a workspace for external service partners who need controlled access to jobs, devices and commercial/service information without exposing the entire internal operations system.</p>
+<div class="media-grid">
+  <figure><img src="case-study-assets/partner-sketch-1.webp" alt="Partner portal sketch"><figcaption>Early hand-drawn information architecture.</figcaption></figure>
+  <figure><img src="case-study-assets/partner-sketch-2.webp" alt="Partner portal sketch"><figcaption>Additional flow exploration from the project materials.</figcaption></figure>
+</div>
+</section>
+
+<section class="section">
+<div class="num">02</div><h2>The product tension: give partners enough control without giving them internal-system complexity</h2>
+<div class="grid3">
+  <div class="card"><div class="eyebrow">PARTNER NEED</div><h3>Know what to do next</h3><p>See assigned jobs, required evidence, due dates and service expectations.</p></div>
+  <div class="card"><div class="eyebrow">BUSINESS NEED</div><h3>Protect consistency</h3><p>Ensure external teams follow the same service states and proof standards as internal teams.</p></div>
+  <div class="card"><div class="eyebrow">PLATFORM NEED</div><h3>Limit complexity</h3><p>Expose only the data and actions a partner is authorized to see.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">03</div><h2>Decision 1 — make the dashboard a work queue, not a reporting homepage</h2>
+<p>For external partners, “dashboard” should mean <strong>today’s obligations</strong>: jobs awaiting acceptance, appointments due, evidence rejected, invoices/payouts needing action and jobs blocked by customer or part availability. Reporting remains secondary.</p>
+<div class="flow">
+  <div><b>NEW</b>Accept / decline within SLA</div>
+  <div><b>SCHEDULED</b>Prepare engineer + part</div>
+  <div><b>IN SERVICE</b>Capture proof + outcome</div>
+  <div><b>CLOSED</b>Invoice / payout / audit trail</div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">04</div><h2>Decision 2 — progressive disclosure by partner role</h2>
+<figure class="hero-media"><img src="case-study-assets/partner-signin.webp" alt="Onsitego sign in"><figcaption>Authentication context from the source archive.</figcaption></figure>
+<p>A service-center owner, coordinator and field technician do not need the same portal. Role-based navigation reduces training burden and protects sensitive commercial information. The owner sees performance and payouts; the coordinator sees job queues and staffing; the technician sees only assigned work and evidence requirements.</p>
+</section>
+
+<section class="section">
+<div class="num">05</div><h2>Decision 3 — use a shared service vocabulary across internal and external tools</h2>
+<figure class="hero-media"><img src="case-study-assets/partner-context.webp" alt="Onsitego product context"><figcaption>Onsitego product context included in the project materials.</figcaption></figure>
+<p>The highest-risk failure is terminology drift: an internal system says “assigned,” a partner calls it “accepted,” and finance sees “open.” I would normalize the lifecycle into a shared state model and reuse the same status language, timestamps and exception reasons across the partner portal and internal operations system.</p>
+<div class="decision"><div class="dlabel">Design system implication</div><h3>Shared components, different permissions</h3><p>The portal should inherit core tables, status chips, filters and service-detail patterns from the internal system while applying a thinner role-appropriate shell. That creates consistency without cloning internal complexity.</p></div>
+</section>
+
+<section class="section">
+<div class="num">06</div><h2>Illustrative impact</h2>
+<div class="stats">
+  <div class="stat"><div class="v">~30%</div><div class="l">fewer coordinator calls asking partners for job status</div></div>
+  <div class="stat"><div class="v">~20%</div><div class="l">faster partner job acceptance / scheduling</div></div>
+  <div class="stat"><div class="v">1 model</div><div class="l">shared service states across partner and internal operations</div></div>
+</div>
+<p class="note">Illustrative metrics for storytelling; replace with actual partner SLA, call-volume or turnaround data.</p>
+</section>
+
+<section class="section">
+<div class="num">07</div><h2>Reflection</h2>
+<p>A partner portal succeeds when it feels simpler than the internal product while still producing data the internal product can trust. The design goal is not feature parity; it is <strong>operational compatibility with much lower cognitive load</strong>.</p>
+</section>
+
+<div class="next"><a class="back" style="margin:0" href="index.html#/work">← All case studies</a><a class="btn" href="livtrack-pro-case-study.html">Next: Livtrack Pro →</a></div>
+</main>
+<footer>© 2026 Sahil Kundal · <a href="https://github.com/sahilkundal/my-portfolio" target="_blank" rel="noopener">GitHub</a> · Case study product design case study</footer>
+</body>
+</html>

@@ -117,6 +117,16 @@
   .tl-org { font-size: 14px; color: var(--sage); margin-top: 2px; }
   .tl-date { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
 
+  /* skills */
+  .skills-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:28px; margin-top:28px; }
+  .skill-panel { border:1px solid var(--line); background:rgba(255,255,255,.28); padding:28px; border-radius:4px; }
+  .skill-panel h3 { font-size:22px; margin-bottom:10px; }
+  .skill-panel p { color:var(--ink-soft); font-size:15.5px; max-width:52ch; }
+  .skill-list { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
+  .skill-pill { border:1px solid var(--line); padding:9px 12px; font-size:13px; background:var(--bg); }
+  .skill-pill.featured { background:var(--ink); color:var(--white); border-color:var(--ink); }
+  @media (max-width:780px) { .skills-grid { grid-template-columns:1fr; } }
+
   /* contact */
   .contact-block { padding: 90px 0 110px; }
   .contact-inner { background: var(--ink); color: var(--bg); border-radius: 4px; padding: 72px 56px; text-align: left; position: relative; overflow: hidden; }
@@ -284,6 +294,7 @@
     .contact-inner { padding: 48px 28px; }
     .case-page { padding: 48px 0 80px; }
   }
+ .aesthetic-panel{height:240px;background:linear-gradient(135deg,#dfe6df,#f4c4ad 55%,#25313b);position:relative;overflow:hidden}.panel-two{background:linear-gradient(135deg,#202b34,#91aaa0 50%,#f1d7bd)}
 </style>
 </head>
 <body>
@@ -296,6 +307,7 @@
     <nav class="links">
       <a onclick="goHash('#/work')">Work</a>
       <a onclick="goHash('#/about')">About</a>
+      <a onclick="goHash('#/skills')">Skills</a>
       <a onclick="goHash('#/contact')">Contact</a>
     </nav>
   </div>
@@ -319,7 +331,7 @@
       <div class="wrap">
         <div class="section-head">
           <div class="section-label">01 — SELECTED WORK</div>
-          <h2>Enterprise systems, and the research behind them.</h2>
+          <h2>Enterprise systems, and the research behind them.</h2><p class="wc-desc" style="max-width:760px;margin-top:18px;">Some Samsung and Onsitego work cannot be shown end to end because of company confidentiality and NDA constraints. The case studies focus on the problem, process, design decisions, and learnings; where appropriate, public product references are included.</p>
         </div>
         <div class="work-grid">
 
@@ -341,6 +353,11 @@
             <div class="tag-row"><span class="tag">Agentic UX</span><span class="tag">Human-in-the-loop</span><span class="tag">25k+ staff</span></div>
           </a>
 
+        </div>
+
+        <div class="section-label" style="margin-top:64px;">ONSITEGO · PRODUCT DESIGN CASE STUDIES</div>
+        <div class="work-grid" style="margin-top:20px;">
+
           <a class="work-card" onclick="goHash('#/case/elan')">
             <div class="wc-arrow"><svg viewBox="0 0 12 12"><line x1="1" y1="11" x2="11" y2="1"/><polyline points="4,1 11,1 11,8"/></svg></div>
             <div class="wc-num">03 · 2021—2025</div>
@@ -350,13 +367,31 @@
             <div class="tag-row"><span class="tag">Design systems</span><span class="tag">Figma</span><span class="tag">Governance</span></div>
           </a>
 
-          <a class="work-card" onclick="goHash('#/case/automation')">
+          <a class="work-card" href="livtrack-pro-case-study.html">
             <div class="wc-arrow"><svg viewBox="0 0 12 12"><line x1="1" y1="11" x2="11" y2="1"/><polyline points="4,1 11,1 11,8"/></svg></div>
-            <div class="wc-num">04 · 2025—</div>
-            <h3>Designing my own workflow</h3>
-            <div class="wc-meta">Samsung R&amp;D Institute India · Design Automation</div>
-            <p class="wc-desc">An AI-assisted annotation engine that closes the design-to-dev handoff gap automatically.</p>
-            <div class="tag-row"><span class="tag">AI-assisted workflows</span><span class="tag">Tooling</span></div>
+            <div class="wc-num">04 · 2024</div>
+            <h3>Livtrack Pro — Field Operations</h3>
+            <div class="wc-meta">Onsitego · Product / UX Design</div>
+            <p class="wc-desc">A mobile field-service app that helps engineers manage jobs, travel, repair evidence, and operational updates from the ground.</p>
+            <div class="tag-row"><span class="tag">Field service</span><span class="tag">Mobile UX</span><span class="tag">Workflow</span></div>
+          </a>
+
+          <a class="work-card" href="inventory-management-case-study.html">
+            <div class="wc-arrow"><svg viewBox="0 0 12 12"><line x1="1" y1="11" x2="11" y2="1"/><polyline points="4,1 11,1 11,8"/></svg></div>
+            <div class="wc-num">05 · Onsitego</div>
+            <h3>Inventory Management</h3>
+            <div class="wc-meta">Onsitego · Service Operations</div>
+            <p class="wc-desc">Connecting repair estimates, spare-part states and visit outcomes into one continuous service workflow.</p>
+            <div class="tag-row"><span class="tag">Inventory</span><span class="tag">Workflow design</span><span class="tag">Systems thinking</span></div>
+          </a>
+
+          <a class="work-card" href="partner-portal-case-study.html">
+            <div class="wc-arrow"><svg viewBox="0 0 12 12"><line x1="1" y1="11" x2="11" y2="1"/><polyline points="4,1 11,1 11,8"/></svg></div>
+            <div class="wc-num">06 · Onsitego</div>
+            <h3>Partner Service Portal</h3>
+            <div class="wc-meta">Onsitego · B2B Platform</div>
+            <p class="wc-desc">A role-based external workspace that gives service partners the actions they need without exposing internal-system complexity.</p>
+            <div class="tag-row"><span class="tag">B2B</span><span class="tag">Partner UX</span><span class="tag">Role-based access</span></div>
           </a>
 
         </div>
@@ -366,7 +401,7 @@
 
           <a class="work-card" onclick="goHash('#/case/skinthesis')">
             <div class="wc-arrow"><svg viewBox="0 0 12 12"><line x1="1" y1="11" x2="11" y2="1"/><polyline points="4,1 11,1 11,8"/></svg></div>
-            <div class="wc-num">05 · 6-week research sprint</div>
+            <div class="wc-num">08 · 6-week research sprint</div>
             <h3>Skinthesis</h3>
             <div class="wc-meta">Independent · UX Researcher / Product Designer</div>
             <p class="wc-desc">A research-led skincare product concept — market research, 15 interviews, and a 73-response survey shaped into a product system.</p>
@@ -375,7 +410,7 @@
 
           <a class="work-card" onclick="goHash('#/case/webfixxers')">
             <div class="wc-arrow"><svg viewBox="0 0 12 12"><line x1="1" y1="11" x2="11" y2="1"/><polyline points="4,1 11,1 11,8"/></svg></div>
-            <div class="wc-num">06 · Freelance</div>
+            <div class="wc-num">09 · Freelance</div>
             <h3>WebFixxers UX Overhaul</h3>
             <div class="wc-meta">Freelance · UX / UI Designer</div>
             <p class="wc-desc">Turning a confusing service website into a clear, trust-building path from visitor to lead.</p>
@@ -409,10 +444,84 @@
       </div>
     </section>
 
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">03 — SKILLS</div>
+          <h2>Designing intelligent products, end to end.</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-panel">
+            <h3>AI UX / AI Product Design</h3>
+            <p>I design AI experiences that make complex capabilities understandable, controllable, and trustworthy—from the first prompt to review, correction, and completion.</p>
+            <div class="skill-list">
+              <span class="skill-pill featured">AI product strategy</span>
+              <span class="skill-pill featured">AI UX architecture</span>
+              <span class="skill-pill">Human-in-the-loop workflows</span>
+              <span class="skill-pill">Agentic interaction design</span>
+              <span class="skill-pill">Prompt and response UX</span>
+              <span class="skill-pill">Trust, transparency and control</span>
+              <span class="skill-pill">AI error and fallback states</span>
+              <span class="skill-pill">Evaluation-oriented UX</span>
+            </div>
+          </div>
+          <div class="skill-panel">
+            <h3>Product and systems design</h3>
+            <p>My work combines research, systems thinking, and practical delivery across operational tools, field-service products, enterprise workflows, and design systems.</p>
+            <div class="skill-list">
+              <span class="skill-pill featured">UX research</span>
+              <span class="skill-pill featured">Product design</span>
+              <span class="skill-pill">User interviews</span>
+              <span class="skill-pill">Service design</span>
+              <span class="skill-pill">Information architecture</span>
+              <span class="skill-pill">Interaction design</span>
+              <span class="skill-pill">Design systems</span>
+              <span class="skill-pill">Complex dashboards</span>
+              <span class="skill-pill">Workflow and state design</span>
+              <span class="skill-pill">Prototyping and usability testing</span>
+              <span class="skill-pill">Stakeholder alignment</span>
+              <span class="skill-pill">Design documentation</span>
+            </div>
+          </div>
+          <div class="skill-panel">
+            <h3>Design engineering and prototyping</h3>
+            <p>I move comfortably between design files and working interfaces, using code to test ideas faster, communicate with engineers, and build more realistic prototypes.</p>
+            <div class="skill-list">
+              <span class="skill-pill featured">Vibe coding</span>
+              <span class="skill-pill featured">HTML</span>
+              <span class="skill-pill featured">CSS</span>
+              <span class="skill-pill featured">Angular</span>
+              <span class="skill-pill">Responsive UI</span>
+              <span class="skill-pill">Component thinking</span>
+              <span class="skill-pill">Front-end collaboration</span>
+              <span class="skill-pill">Interactive prototypes</span>
+              <span class="skill-pill">Rapid concept validation</span>
+            </div>
+          </div>
+          <div class="skill-panel">
+            <h3>Tools and ways of working</h3>
+            <p>Structured enough for large teams, exploratory enough for ambiguous problems, and always focused on making decisions visible.</p>
+            <div class="skill-list">
+              <span class="skill-pill">Figma</span>
+              <span class="skill-pill">FigJam</span>
+              <span class="skill-pill">Design tokens</span>
+              <span class="skill-pill">Journey mapping</span>
+              <span class="skill-pill">User flows</span>
+              <span class="skill-pill">Wireframing</span>
+              <span class="skill-pill">High-fidelity UI</span>
+              <span class="skill-pill">Workshop facilitation</span>
+              <span class="skill-pill">Cross-functional collaboration</span>
+              <span class="skill-pill">Product discovery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" style="border-top:none; padding-top:0;">
       <div class="wrap contact-block">
         <div class="contact-inner">
-          <div class="section-label" style="color:#A9AFB8;">03 — CONTACT</div>
+          <div class="section-label" style="color:#A9AFB8;">04 — CONTACT</div>
           <h2 style="margin-top:14px;">Building something that needs a systems-minded designer?</h2>
           <p>I'm open to UX and product design roles working on AI-driven products, especially where design systems and complex interaction models meet.</p>
           <div class="contact-links">
@@ -420,6 +529,7 @@
             <a href="https://cal.com/sahil-kundal-276/30min" target="_blank" rel="noopener" class="btn btn-secondary">Schedule a call</a>
             <a href="https://www.linkedin.com/in/276-sahil-kundal/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
             <a href="https://www.behance.net/sahilkundal" target="_blank" rel="noopener" class="btn btn-secondary">Behance</a>
+            <a href="https://github.com/sahilkundal/my-portfolio" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
           </div>
         </div>
       </div>
@@ -427,7 +537,7 @@
 
     <footer class="wrap">
       <span>© 2026 Sahil Kundal</span>
-      <span>Designed &amp; built with intent</span>
+      <span>Designed &amp; built with intent · <a href="https://github.com/sahilkundal/my-portfolio" target="_blank" rel="noopener">View source on GitHub</a></span>
     </footer>
   </section>
 
@@ -701,7 +811,7 @@
       </div>
 
       <div class="elan-hero-media">
-        <img src="elan-thumb.png" alt="ELAN Design System v1.0 cover from Onsitego" loading="eager">
+        <img src="case-study-assets/field-board.webp" alt="ELAN Design System v1.0 cover from Onsitego" loading="eager">
       </div>
       <p class="research-note">The original ELAN v1.0 file is dated July 2021. The portfolio story below describes how the system evolved through my Onsitego tenure and how its reusable principles supported multiple product surfaces.</p>
 
@@ -757,8 +867,7 @@
         <p>ELAN wasn't only a UI-component library. The Figma file also contained a broad visual asset ecosystem: appliance imagery, electronics, service imagery, brand references, promotional graphics, payment marks and utility illustrations.</p>
         <p>That mattered because Onsitego's interface often had to communicate a physical product or a service context. Reusing an approved visual vocabulary made those experiences feel related even when the workflows were very different.</p>
         <div class="elan-media-grid">
-          <figure><img src="elan-contact-1.jpg" alt="ELAN visual asset inventory showing products, brands and interface-related assets" loading="lazy"><figcaption>ELAN visual asset inventory showing products, brands and interface-related assets.<br><span>Asset inventory: product, service, brand and UI-supporting imagery.</span></figcaption></figure>
-          <figure><img src="elan-contact-2.jpg" alt="ELAN visual asset inventory showing service, product and partner ecosystem assets" loading="lazy"><figcaption>ELAN visual asset inventory showing service, product and partner ecosystem assets.<br><span>Broader ecosystem coverage across service and partner context.</span></figcaption></figure>
+          
         </div>
       </div>
 

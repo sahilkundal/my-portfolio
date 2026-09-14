@@ -1,0 +1,11 @@
+Urban Agriculture portfolio update
+
+The three previous Urban Agriculture case-study pages have been combined into one end-to-end case study: urban-agriculture.html. The portfolio index now contains one Urban Agriculture card, filed under "Independent & Research Projects" (previously it was miscategorized in the Samsung work grid with broken markup). The requested research and indoor-garden images were removed, then reintroduced in this update using the two supplied project photos (hero.jpg, vertical-wall.jpg), plus one original SVG infographic of the six-stage service loop.
+
+---
+Site-wide fix notes (this update)
+
+- capella-case.css: removed a broken/duplicate --bg custom property declaration (invalid hex with a stray space).
+- index.html: removed the Urban Agriculture card that used undefined CSS classes (work-card-top, work-card-link) and sat in the wrong section; added it to Independent & Research Projects with the same markup pattern as every other card. Added the previously unlinked Field Management System case study to the Onsitego grid and renumbered all cards in order.
+- livtrack-pro-case-study.html: rebuilt to match the shared header/layout/CSS structure used by the other three Onsitego case studies (it had previously diverged: different header markup, <main class="wrap"> instead of <main class="case">, and every <section> missing class="section", which silently broke all vertical spacing). Filled in the previously empty "Interface glimpses" section, added a missing "Illustrative impact" stats block, and added a "next case study" footer link (previously absent, breaking the case-study loop).
+- All four Onsitego case studies (field-management, inventory-management, partner-portal, livtrack-pro): expanded with additional sections (edge cases, trust/accountability, connectivity design, or a research/process breakdown depending on the case), and one original inline-SVG infographic each (state diagrams / role diagrams / lifecycle diagrams / illustrative wireframes), reusing the .hero-media/.ux-process CSS that existed in the stylesheet but was never actually used in the markup. No photographic or screenshot-style images were added to these four pages, since the underlying Onsitego product UI is NDA-protected — all diagrams are original illustrations of the reconstructed logic, not reproductions of real screens.

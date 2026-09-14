@@ -26,13 +26,13 @@ header{position:sticky;top:0;z-index:30;background:rgba(237,238,233,.9);backdrop
 .back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--soft);font-size:14px;margin-bottom:40px}
 .back:hover{color:var(--coral)}
 .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sage)}
-h1{font-size:clamp(38px,6vw,66px);max-width:15ch;margin-top:14px}
+h1{font-size:clamp(38px,6vw,66px);max-width:16ch;margin-top:14px}
 .lede{font-size:20px;color:var(--soft);max-width:60ch;margin-top:20px}
 .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .meta .label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
 .meta .value{font-size:15px;font-weight:500;margin-top:5px}
-.hero-media{margin:42px 0 0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
-.hero-media img{width:100%;display:block}
+.hero-media{margin:42px 0 0;border:1px solid var(--line);background:var(--panel);overflow:hidden;border-radius:2px}
+.hero-media svg{width:100%;display:block}
 .assumption{margin-top:14px;font-size:12.5px;color:var(--soft)}
 .section{margin-top:72px}
 .num{font:600 13px 'Space Grotesk',sans-serif;color:var(--coral)}
@@ -42,6 +42,7 @@ h1{font-size:clamp(38px,6vw,66px);max-width:15ch;margin-top:14px}
 .section strong{color:var(--ink)}
 .quote{border-left:3px solid var(--coral);padding-left:22px;margin:28px 0;font:500 21px/1.35 'Space Grotesk',sans-serif;max-width:62ch}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}
 .card{background:var(--panel);border:1px solid var(--line);padding:20px}
 .card .eyebrow{font-size:11px;color:var(--coral);font-weight:600;letter-spacing:.05em}
 .card h3{font-size:16px;margin:8px 0 7px}.card p{font-size:13.5px;margin:0}
@@ -50,8 +51,8 @@ h1{font-size:clamp(38px,6vw,66px);max-width:15ch;margin-top:14px}
 .stat .v{font:600 30px 'Space Grotesk',sans-serif;color:var(--coral)}
 .stat .l{font-size:13px;color:var(--soft);margin-top:4px}
 .media-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
-figure{border:1px solid var(--line);background:var(--panel);overflow:hidden}
-figure img{width:100%;display:block} figcaption{border-top:1px solid var(--line);padding:10px 12px;font-size:12px;color:var(--soft)}
+figure{margin:0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
+figure img,figure svg{width:100%;display:block} figcaption{border-top:1px solid var(--line);padding:10px 12px;font-size:12px;color:var(--soft)}
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
 .flow div{border:1px solid var(--line);background:var(--panel);padding:14px;font-size:13px}
 .flow b{display:block;color:var(--coral);font-size:11px;margin-bottom:4px}
@@ -59,14 +60,36 @@ figure img{width:100%;display:block} figcaption{border-top:1px solid var(--line)
 .decision .dlabel{font-size:11px;color:var(--sage);font-weight:600;text-transform:uppercase;letter-spacing:.07em}
 .decision h3{margin:8px 0 10px}.decision p:last-child{margin-bottom:0}
 .note{font-size:13px;color:var(--soft);font-style:italic}
+.infographic{margin:28px 0;border:1px solid var(--line);background:var(--panel);padding:24px 24px 18px;border-radius:2px}
+.infographic svg{width:100%;height:auto;display:block}
+.infographic .caption{margin-top:14px;font-size:12.5px;color:var(--soft);border-top:1px solid var(--line);padding-top:12px}
+.wireframe{margin:28px 0;border:1px solid var(--line);background:var(--panel);padding:20px;border-radius:2px}
+.wireframe .wf-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wireframe .wf-col{background:var(--white);border:1px solid var(--line);padding:12px}
+.wireframe .wf-col b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-bottom:10px}
+.wireframe .wf-card{background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--coral);padding:8px;font-size:11.5px;margin-bottom:8px;color:var(--soft)}
+.wireframe .wf-card.sage{border-left-color:var(--sage)}
+.wireframe .wf-caption{margin-top:14px;font-size:12.5px;color:var(--soft)}
 .next{margin-top:82px;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .btn{display:inline-flex;padding:12px 18px;border:1px solid var(--ink);text-decoration:none;font-size:14px}
 .btn:hover{background:var(--ink);color:var(--bg)}
 footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);font-size:13px}
 @media(max-width:760px){
  .wrap,.case,.nav{padding-left:24px;padding-right:24px}
- .meta{grid-template-columns:1fr 1fr}.grid3,.stats,.media-grid,.flow{grid-template-columns:1fr}
+ .meta{grid-template-columns:1fr 1fr}.grid3,.grid2,.stats,.media-grid,.flow,.wireframe .wf-row{grid-template-columns:1fr}
 }
+</style>
+<style>
+.ux-process{margin-top:2rem}
+.process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.process-card{border:1px solid var(--line,#d8d8d0);border-radius:16px;padding:20px;background:var(--panel,#f8f7f2)}
+.process-index{font:600 12px/1 "IBM Plex Mono",monospace;color:var(--coral,#e85b3b);margin-bottom:18px}
+.process-card h4{margin:0 0 8px;font-size:17px}
+.process-card p{margin:0;color:var(--soft,#62645e);font-size:14px;line-height:1.65}
+.outcome-box{margin-top:18px;padding:22px;border-left:3px solid var(--coral,#e85b3b);background:var(--panel,#f8f7f2)}
+.outcome-box strong{display:block;margin-bottom:6px}
+.outcome-box p{margin:0;line-height:1.7;color:var(--soft)}
+@media(max-width:760px){.process-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -77,16 +100,12 @@ footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);f
 <h1>Partner Service Portal</h1>
 <p class="lede">A role-based portal for external service partners to accept work, manage service obligations and stay compatible with the internal operations model without inheriting its complexity.</p>
 <div class="meta"><div><div class="label">My Role</div><div class="value">Product / UX Designer</div></div><div><div class="label">Users</div><div class="value">Service partners</div></div><div><div class="label">Timeline</div><div class="value">Assumed 10–14 weeks</div></div><div><div class="label">Surface</div><div class="value">Responsive web</div></div></div>
-<figure class="hero-media"><img src="case-study-assets/partner-sketch-1.webp" alt=""><figcaption>Early portal exploration from the Partner Portal project.</figcaption></figure>
-<p class="assumption">Because of company policy and NDA constraints, some end-to-end screens and analytics cannot be shown. The case study focuses on the problem, research, design decisions, and selected interface glimpses.</p>
+
+<p class="assumption">Because of company policy and NDA constraints, some end-to-end screens and analytics cannot be shown. The case study focuses on the problem, research, design decisions, and selected interface glimpses. Diagrams below are original illustrations of the reconstructed model, not reproductions of the source screens.</p>
 
 <section class="section">
 <div class="num">01</div><h2>Context: extend the service operation beyond the company boundary</h2>
 <p>The <strong>Partner portal</strong> archive contains early paper sketches, partner/brand references, service-category imagery and Onsitego sign-in/context assets. I read this as a workspace for external service partners who need controlled access to jobs, devices and commercial/service information without exposing the entire internal operations system.</p>
-<div class="media-grid">
-  <figure><img src="case-study-assets/partner-sketch-1.webp" alt="Partner portal sketch"><figcaption>Early hand-drawn information architecture.</figcaption></figure>
-  <figure><img src="case-study-assets/partner-sketch-2.webp" alt="Partner portal sketch"><figcaption>Additional flow exploration from the project materials.</figcaption></figure>
-</div>
 </section>
 
 <section class="section">
@@ -100,30 +119,94 @@ footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);f
 
 <section class="section">
 <div class="num">03</div><h2>Decision 1 — make the dashboard a work queue, not a reporting homepage</h2>
-<p>For external partners, “dashboard” should mean <strong>today’s obligations</strong>: jobs awaiting acceptance, appointments due, evidence rejected, invoices/payouts needing action and jobs blocked by customer or part availability. Reporting remains secondary.</p>
+<p>For external partners, "dashboard" should mean <strong>today's obligations</strong>: jobs awaiting acceptance, appointments due, evidence rejected, invoices/payouts needing action and jobs blocked by customer or part availability. Reporting remains secondary.</p>
 <div class="flow">
   <div><b>NEW</b>Accept / decline within SLA</div>
   <div><b>SCHEDULED</b>Prepare engineer + part</div>
   <div><b>IN SERVICE</b>Capture proof + outcome</div>
   <div><b>CLOSED</b>Invoice / payout / audit trail</div>
 </div>
+<div class="wireframe">
+  <div class="wf-row">
+    <div class="wf-col"><b>New (4)</b>
+      <div class="wf-card">AC install · accept by 3:00p</div>
+      <div class="wf-card">Geyser repair · SLA 90 min</div>
+    </div>
+    <div class="wf-col"><b>Scheduled (6)</b>
+      <div class="wf-card sage">Chimney service · tomorrow 10a</div>
+    </div>
+    <div class="wf-col"><b>In service (2)</b>
+      <div class="wf-card">RO repair · evidence pending</div>
+    </div>
+    <div class="wf-col"><b>Closed — needs action (3)</b>
+      <div class="wf-card sage">Invoice ready to submit</div>
+      <div class="wf-card">Payout on hold · missing proof</div>
+    </div>
+  </div>
+  <div class="wf-caption">Illustrative coordinator dashboard, read as a work queue rather than a reporting homepage — today's obligations first, reporting secondary. Placeholder data for the reconstructed interface.</div>
+</div>
 </section>
 
 <section class="section">
 <div class="num">04</div><h2>Decision 2 — progressive disclosure by partner role</h2>
-<figure class="hero-media"><img src="case-study-assets/partner-signin.webp" alt="Onsitego sign in"><figcaption>Authentication context from the source archive.</figcaption></figure>
 <p>A service-center owner, coordinator and field technician do not need the same portal. Role-based navigation reduces training burden and protects sensitive commercial information. The owner sees performance and payouts; the coordinator sees job queues and staffing; the technician sees only assigned work and evidence requirements.</p>
+<div class="infographic">
+<svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Role-based access: owner sees performance and payouts, coordinator sees job queues and staffing, technician sees only assigned work.">
+<style>
+  .bx{fill:var(--white);stroke:var(--line);stroke-width:1}
+  .bx-top{fill:var(--panel);stroke:var(--ink);stroke-width:1.2}
+  .lbl{font:600 13px 'Space Grotesk',sans-serif;fill:var(--ink)}
+  .sub{font:400 11px 'IBM Plex Sans',sans-serif;fill:var(--soft)}
+  .ln{stroke:var(--soft);stroke-width:1.2;fill:none}
+</style>
+<rect x="360" y="16" width="180" height="56" rx="4" class="bx-top"/>
+<text x="450" y="40" text-anchor="middle" class="lbl">Partner portal</text>
+<text x="450" y="56" text-anchor="middle" class="sub">shared components, role shell</text>
+
+<path d="M450,72 L450,100 L150,100 L150,120" class="ln"/>
+<path d="M450,72 L450,120" class="ln"/>
+<path d="M450,72 L450,100 L750,100 L750,120" class="ln"/>
+
+<rect x="40" y="120" width="220" height="110" rx="4" class="bx"/>
+<text x="150" y="146" text-anchor="middle" class="lbl">Owner</text>
+<text x="150" y="166" text-anchor="middle" class="sub">performance</text>
+<text x="150" y="182" text-anchor="middle" class="sub">payouts</text>
+<text x="150" y="198" text-anchor="middle" class="sub">commercial terms</text>
+
+<rect x="340" y="120" width="220" height="110" rx="4" class="bx"/>
+<text x="450" y="146" text-anchor="middle" class="lbl">Coordinator</text>
+<text x="450" y="166" text-anchor="middle" class="sub">job queues</text>
+<text x="450" y="182" text-anchor="middle" class="sub">staffing</text>
+<text x="450" y="198" text-anchor="middle" class="sub">acceptance / decline</text>
+
+<rect x="640" y="120" width="220" height="110" rx="4" class="bx"/>
+<text x="750" y="146" text-anchor="middle" class="lbl">Field technician</text>
+<text x="750" y="166" text-anchor="middle" class="sub">assigned work only</text>
+<text x="750" y="182" text-anchor="middle" class="sub">evidence capture</text>
+<text x="750" y="198" text-anchor="middle" class="sub">no commercial data</text>
+</svg>
+<div class="caption">Reconstructed access model. The same underlying job record is projected differently per role, so a technician never sees payout terms and an owner is never forced through a technician's evidence checklist.</div>
+</div>
 </section>
 
 <section class="section">
 <div class="num">05</div><h2>Decision 3 — use a shared service vocabulary across internal and external tools</h2>
-<figure class="hero-media"><img src="case-study-assets/partner-context.webp" alt="Onsitego product context"><figcaption>Onsitego product context included in the project materials.</figcaption></figure>
-<p>The highest-risk failure is terminology drift: an internal system says “assigned,” a partner calls it “accepted,” and finance sees “open.” I would normalize the lifecycle into a shared state model and reuse the same status language, timestamps and exception reasons across the partner portal and internal operations system.</p>
+<p>The highest-risk failure is terminology drift: an internal system says "assigned," a partner calls it "accepted," and finance sees "open." I would normalize the lifecycle into a shared state model and reuse the same status language, timestamps and exception reasons across the partner portal and internal operations system.</p>
 <div class="decision"><div class="dlabel">Design system implication</div><h3>Shared components, different permissions</h3><p>The portal should inherit core tables, status chips, filters and service-detail patterns from the internal system while applying a thinner role-appropriate shell. That creates consistency without cloning internal complexity.</p></div>
 </section>
 
 <section class="section">
-<div class="num">06</div><h2>Illustrative impact</h2>
+<div class="num">06</div><h2>Trust and accountability, not just access</h2>
+<div class="grid2">
+  <div class="card"><div class="eyebrow">EVIDENCE STANDARD</div><h3>Same proof bar as internal teams</h3><p>Partners submit the same photo, note and diagnosis evidence internal engineers do — the portal should reject incomplete submissions the same way, not silently accept less.</p></div>
+  <div class="card"><div class="eyebrow">SLA VISIBILITY</div><h3>The clock is always on screen</h3><p>Acceptance and service SLAs are shown as a countdown, not a policy document, so a coordinator can prioritize by risk of breach.</p></div>
+  <div class="card"><div class="eyebrow">DISPUTE PATH</div><h3>A rejected invoice needs a reason</h3><p>When a payout is held, the portal states which evidence or field triggered the hold, so a partner can resolve it without calling support.</p></div>
+  <div class="card"><div class="eyebrow">ONBOARDING</div><h3>Read-only until verified</h3><p>New partner accounts see the portal in a limited, read-only mode until credentials and service-area agreements are confirmed.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">07</div><h2>Illustrative impact</h2>
 <div class="stats">
   <div class="stat"><div class="v">~30%</div><div class="l">fewer coordinator calls asking partners for job status</div></div>
   <div class="stat"><div class="v">~20%</div><div class="l">faster partner job acceptance / scheduling</div></div>
@@ -132,9 +215,23 @@ footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);f
 <p class="note">Illustrative metrics for storytelling; replace with actual partner SLA, call-volume or turnaround data.</p>
 </section>
 
+<section class="section ux-process">
+<div class="num">Process</div><h2>From internal complexity to a partner-ready shell</h2>
+<div class="process-grid">
+  <div class="process-card"><div class="process-index">01</div><h4>Map the boundary</h4><p>Identify exactly which internal data and actions a partner is authorized to touch.</p></div>
+  <div class="process-card"><div class="process-index">02</div><h4>Define roles</h4><p>Separate owner, coordinator and technician needs instead of one generic "partner user."</p></div>
+  <div class="process-card"><div class="process-index">03</div><h4>Reuse the design system</h4><p>Pull status chips, tables and filters from the internal ELAN system rather than inventing new ones.</p></div>
+  <div class="process-card"><div class="process-index">04</div><h4>Normalize vocabulary</h4><p>Align state names across partner and internal tools to prevent terminology drift.</p></div>
+  <div class="process-card"><div class="process-index">05</div><h4>Design accountability</h4><p>Build evidence standards, SLA countdowns and dispute paths into the core flow, not as an afterthought.</p></div>
+  <div class="process-card"><div class="process-index">06</div><h4>Sequence onboarding</h4><p>Define what a partner sees before verification is complete.</p></div>
+</div>
+<div class="outcome-box"><strong>Outcome</strong><p>A portal that feels purpose-built for partners while staying structurally identical, underneath, to the system operations already trusts.</p></div>
+</section>
+
 <section class="section">
-<div class="num">07</div><h2>Reflection</h2>
+<div class="num">08</div><h2>Reflection</h2>
 <p>A partner portal succeeds when it feels simpler than the internal product while still producing data the internal product can trust. The design goal is not feature parity; it is <strong>operational compatibility with much lower cognitive load</strong>.</p>
+<p>The recurring tension worth naming is that "simpler" and "compatible" pull in opposite directions — every field removed to reduce partner complexity is a field the internal system might still expect. Resolving that tension role by role, rather than portal-wide, is what keeps the shell thin without breaking the data internal teams depend on.</p>
 </section>
 
 <div class="next"><a class="back" style="margin:0" href="index.html#/work">← All case studies</a><a class="btn" href="livtrack-pro-case-study.html">Next: Livtrack Pro →</a></div>

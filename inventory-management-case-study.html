@@ -26,13 +26,13 @@ header{position:sticky;top:0;z-index:30;background:rgba(237,238,233,.9);backdrop
 .back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--soft);font-size:14px;margin-bottom:40px}
 .back:hover{color:var(--coral)}
 .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sage)}
-h1{font-size:clamp(38px,6vw,66px);max-width:15ch;margin-top:14px}
+h1{font-size:clamp(38px,6vw,66px);max-width:16ch;margin-top:14px}
 .lede{font-size:20px;color:var(--soft);max-width:60ch;margin-top:20px}
 .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .meta .label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
 .meta .value{font-size:15px;font-weight:500;margin-top:5px}
-.hero-media{margin:42px 0 0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
-.hero-media img{width:100%;display:block}
+.hero-media{margin:42px 0 0;border:1px solid var(--line);background:var(--panel);overflow:hidden;border-radius:2px}
+.hero-media svg{width:100%;display:block}
 .assumption{margin-top:14px;font-size:12.5px;color:var(--soft)}
 .section{margin-top:72px}
 .num{font:600 13px 'Space Grotesk',sans-serif;color:var(--coral)}
@@ -42,6 +42,7 @@ h1{font-size:clamp(38px,6vw,66px);max-width:15ch;margin-top:14px}
 .section strong{color:var(--ink)}
 .quote{border-left:3px solid var(--coral);padding-left:22px;margin:28px 0;font:500 21px/1.35 'Space Grotesk',sans-serif;max-width:62ch}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}
 .card{background:var(--panel);border:1px solid var(--line);padding:20px}
 .card .eyebrow{font-size:11px;color:var(--coral);font-weight:600;letter-spacing:.05em}
 .card h3{font-size:16px;margin:8px 0 7px}.card p{font-size:13.5px;margin:0}
@@ -50,8 +51,8 @@ h1{font-size:clamp(38px,6vw,66px);max-width:15ch;margin-top:14px}
 .stat .v{font:600 30px 'Space Grotesk',sans-serif;color:var(--coral)}
 .stat .l{font-size:13px;color:var(--soft);margin-top:4px}
 .media-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
-figure{border:1px solid var(--line);background:var(--panel);overflow:hidden}
-figure img{width:100%;display:block} figcaption{border-top:1px solid var(--line);padding:10px 12px;font-size:12px;color:var(--soft)}
+figure{margin:0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
+figure img,figure svg{width:100%;display:block} figcaption{border-top:1px solid var(--line);padding:10px 12px;font-size:12px;color:var(--soft)}
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
 .flow div{border:1px solid var(--line);background:var(--panel);padding:14px;font-size:13px}
 .flow b{display:block;color:var(--coral);font-size:11px;margin-bottom:4px}
@@ -59,14 +60,36 @@ figure img{width:100%;display:block} figcaption{border-top:1px solid var(--line)
 .decision .dlabel{font-size:11px;color:var(--sage);font-weight:600;text-transform:uppercase;letter-spacing:.07em}
 .decision h3{margin:8px 0 10px}.decision p:last-child{margin-bottom:0}
 .note{font-size:13px;color:var(--soft);font-style:italic}
+.infographic{margin:28px 0;border:1px solid var(--line);background:var(--panel);padding:24px 24px 18px;border-radius:2px}
+.infographic svg{width:100%;height:auto;display:block}
+.infographic .caption{margin-top:14px;font-size:12.5px;color:var(--soft);border-top:1px solid var(--line);padding-top:12px}
+.wireframe{margin:28px 0;border:1px solid var(--line);background:var(--panel);padding:20px;border-radius:2px}
+.wireframe .wf-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wireframe .wf-col{background:var(--white);border:1px solid var(--line);padding:12px}
+.wireframe .wf-col b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-bottom:10px}
+.wireframe .wf-card{background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--coral);padding:8px;font-size:11.5px;margin-bottom:8px;color:var(--soft)}
+.wireframe .wf-card.sage{border-left-color:var(--sage)}
+.wireframe .wf-caption{margin-top:14px;font-size:12.5px;color:var(--soft)}
 .next{margin-top:82px;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .btn{display:inline-flex;padding:12px 18px;border:1px solid var(--ink);text-decoration:none;font-size:14px}
 .btn:hover{background:var(--ink);color:var(--bg)}
 footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);font-size:13px}
 @media(max-width:760px){
  .wrap,.case,.nav{padding-left:24px;padding-right:24px}
- .meta{grid-template-columns:1fr 1fr}.grid3,.stats,.media-grid,.flow{grid-template-columns:1fr}
+ .meta{grid-template-columns:1fr 1fr}.grid3,.grid2,.stats,.media-grid,.flow,.wireframe .wf-row{grid-template-columns:1fr}
 }
+</style>
+<style>
+.ux-process{margin-top:2rem}
+.process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.process-card{border:1px solid var(--line,#d8d8d0);border-radius:16px;padding:20px;background:var(--panel,#f8f7f2)}
+.process-index{font:600 12px/1 "IBM Plex Mono",monospace;color:var(--coral,#e85b3b);margin-bottom:18px}
+.process-card h4{margin:0 0 8px;font-size:17px}
+.process-card p{margin:0;color:var(--soft,#62645e);font-size:14px;line-height:1.65}
+.outcome-box{margin-top:18px;padding:22px;border-left:3px solid var(--coral,#e85b3b);background:var(--panel,#f8f7f2)}
+.outcome-box strong{display:block;margin-bottom:6px}
+.outcome-box p{margin:0;line-height:1.7;color:var(--soft)}
+@media(max-width:760px){.process-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -77,16 +100,12 @@ footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);f
 <h1>Inventory Management for Service Operations</h1>
 <p class="lede">Connecting spare-part availability, repair estimates and visit outcomes so inventory follows the service job instead of living in a separate operational silo.</p>
 <div class="meta"><div><div class="label">My Role</div><div class="value">Product / UX Designer</div></div><div><div class="label">Users</div><div class="value">Ops + service centers</div></div><div><div class="label">Timeline</div><div class="value">Assumed 8–12 weeks</div></div><div><div class="label">Surface</div><div class="value">Desktop web</div></div></div>
-<figure class="hero-media"><img src="case-study-assets/inventory-ticket.webp" alt=""><figcaption>Representative service-ticket screen from the Inventory Management project.</figcaption></figure>
-<p class="assumption">Because of company policy and NDA constraints, some end-to-end screens and analytics cannot be shown. The case study focuses on the problem, research, design decisions, and selected interface glimpses.</p>
+
+<p class="assumption">Because of company policy and NDA constraints, some end-to-end screens and analytics cannot be shown. The case study focuses on the problem, research, design decisions, and selected interface glimpses. Diagrams below are original illustrations of the reconstructed model, not reproductions of the source screens.</p>
 
 <section class="section">
 <div class="num">01</div><h2>Context: inventory is not a warehouse problem when it blocks a repair</h2>
-<p>The <strong>Inventory management</strong> project combines hand-drawn flows with detailed Onsitego service screens containing repair estimates, visit outcomes, service-center assignment and ticket history. That makes inventory part of a broader repair workflow: spare parts, estimates and service outcomes have to stay synchronized with the customer’s job.</p>
-<div class="media-grid">
-  <figure><img src="case-study-assets/inventory-wireframe.webp" alt="Inventory wireframe"><figcaption>Paper wireframe from the project materials.</figcaption></figure>
-  <figure><img src="case-study-assets/inventory-ticket.webp" alt="Service ticket with inventory-related data"><figcaption>Service-ticket state used as the operational context for inventory decisions.</figcaption></figure>
-</div>
+<p>The <strong>Inventory management</strong> project combines hand-drawn flows with detailed Onsitego service screens containing repair estimates, visit outcomes, service-center assignment and ticket history. That makes inventory part of a broader repair workflow: spare parts, estimates and service outcomes have to stay synchronized with the customer's job.</p>
 </section>
 
 <section class="section">
@@ -96,35 +115,101 @@ footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);f
   <div class="card"><div class="eyebrow">FRICTION 02</div><h3>Stock is visible too late</h3><p>Availability discovered after a visit causes another appointment, another call and another SLA risk.</p></div>
   <div class="card"><div class="eyebrow">FRICTION 03</div><h3>Estimate ≠ inventory</h3><p>Repair cost, part approval and stock reservation can become three disconnected decisions.</p></div>
 </div>
-<p class="quote">The product should treat a spare part as a stateful object in the repair journey—not as a SKU living in a separate inventory module.</p>
+<p class="quote">The product should treat a spare part as a stateful object in the repair journey — not as a SKU living in a separate inventory module.</p>
 </section>
 
 <section class="section">
 <div class="num">03</div><h2>Decision 1 — connect diagnosis, estimate and stock in one decision surface</h2>
-<figure class="hero-media"><img src="case-study-assets/inventory-estimate.webp" alt="Repair estimate screen"><figcaption>Repair-estimate artifact from the source file.</figcaption></figure>
-<p>When an operator selects a diagnosis or repair outcome, the system should immediately surface the compatible part, its location, available quantity, expected replenishment and whether customer approval is required. This prevents the common “approve now, discover stock later” loop.</p>
+<p>When an operator selects a diagnosis or repair outcome, the system should immediately surface the compatible part, its location, available quantity, expected replenishment and whether customer approval is required. This prevents the common "approve now, discover stock later" loop.</p>
+<div class="wireframe">
+  <div class="wf-row" style="grid-template-columns:1.2fr 1fr 1fr;">
+    <div class="wf-col"><b>Diagnosis</b>
+      <div class="wf-card">Compressor failure — confirmed</div>
+      <div class="wf-card sage">Customer approval: pending</div>
+    </div>
+    <div class="wf-col"><b>Compatible part</b>
+      <div class="wf-card">Part #CMP-2201 · 3 in stock, Sector 62 hub</div>
+      <div class="wf-card">Replenishment: 4 units, ETA 2 days</div>
+    </div>
+    <div class="wf-col"><b>Estimate + stock</b>
+      <div class="wf-card sage">Repair estimate: auto-updates with part cost</div>
+      <div class="wf-card">Reservation created on approval</div>
+    </div>
+  </div>
+  <div class="wf-caption">Illustrative decision surface for Decision 1 — diagnosis, compatible part and stock reservation shown together instead of three separate screens. Placeholder data for the reconstructed interface.</div>
+</div>
 </section>
 
 <section class="section">
 <div class="num">04</div><h2>Decision 2 — model inventory around states that operations can act on</h2>
-<div class="flow">
-  <div><b>REQUESTED</b>Part need identified</div>
-  <div><b>RESERVED</b>Stock committed to a job</div>
-  <div><b>IN TRANSIT</b>Moving to service center / engineer</div>
-  <div><b>CONSUMED / RETURNED</b>Closed with traceability</div>
-</div>
 <p>Stock count alone is not enough. The interface needs to distinguish <strong>available, reserved, in-transit, consumed, defective and return-pending</strong>. Those states are what stop double allocation and make reconciliation possible.</p>
+<div class="infographic">
+<svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Spare part lifecycle: requested, reserved, in transit, then consumed or returned.">
+<style>
+  .bx{fill:var(--white);stroke:var(--line);stroke-width:1}
+  .bx-a{fill:var(--sage);fill-opacity:.16;stroke:var(--sage)}
+  .bx-b{fill:var(--coral);fill-opacity:.12;stroke:var(--coral)}
+  .lbl{font:600 13px 'Space Grotesk',sans-serif;fill:var(--ink)}
+  .sub{font:400 11px 'IBM Plex Sans',sans-serif;fill:var(--soft)}
+  .ln{stroke:var(--soft);stroke-width:1.4;fill:none;marker-end:url(#arrow2)}
+  .ln-b{stroke:var(--coral);stroke-width:1.4;fill:none;stroke-dasharray:4 3;marker-end:url(#arrow2b)}
+</style>
+<defs>
+  <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--soft)"/></marker>
+  <marker id="arrow2b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--coral)"/></marker>
+</defs>
+<rect x="16" y="70" width="150" height="64" rx="4" class="bx"/>
+<text x="91" y="96" text-anchor="middle" class="lbl">Requested</text>
+<text x="91" y="114" text-anchor="middle" class="sub">part need identified</text>
+
+<rect x="206" y="70" width="150" height="64" rx="4" class="bx"/>
+<text x="281" y="96" text-anchor="middle" class="lbl">Reserved</text>
+<text x="281" y="114" text-anchor="middle" class="sub">stock committed to job</text>
+
+<rect x="396" y="70" width="150" height="64" rx="4" class="bx"/>
+<text x="471" y="96" text-anchor="middle" class="lbl">In transit</text>
+<text x="471" y="114" text-anchor="middle" class="sub">moving to engineer</text>
+
+<rect x="596" y="16" width="150" height="64" rx="4" class="bx-a"/>
+<text x="671" y="42" text-anchor="middle" class="lbl">Consumed</text>
+<text x="671" y="60" text-anchor="middle" class="sub">used on the visit</text>
+
+<rect x="596" y="140" width="150" height="64" rx="4" class="bx-b"/>
+<text x="671" y="166" text-anchor="middle" class="lbl">Return-pending</text>
+<text x="671" y="184" text-anchor="middle" class="sub">diagnosis changed</text>
+
+<rect x="786" y="140" width="98" height="64" rx="4" class="bx"/>
+<text x="835" y="166" text-anchor="middle" class="lbl">Available</text>
+<text x="835" y="184" text-anchor="middle" class="sub">back in stock</text>
+
+<path d="M166,102 L206,102" class="ln"/>
+<path d="M356,102 L396,102" class="ln"/>
+<path d="M546,90 L596,60" class="ln"/>
+<path d="M546,114 L596,160" class="ln-b"/>
+<path d="M746,172 L786,172" class="ln-b"/>
+</svg>
+<div class="caption">Reconstructed part-state model. The branch on the right is what a flat "in stock / out of stock" count cannot represent — a part committed to one job while a diagnosis change frees it back to the pool.</div>
+</div>
 </section>
 
 <section class="section">
 <div class="num">05</div><h2>Decision 3 — make visit outcome the bridge between service and inventory</h2>
-<figure class="hero-media"><img src="case-study-assets/inventory-outcome.webp" alt="Visit outcome screen"><figcaption>Visit-outcome controls in the source file.</figcaption></figure>
 <p>The visit-outcome screen is the natural moment to update inventory automatically. If a part was used, the job should consume the reservation; if diagnosis changed, the reservation should be released; if a replacement is pending, the next action should be created without requiring a second system.</p>
-<div class="decision"><div class="dlabel">System rule</div><h3>One user action, multiple synchronized records</h3><p>Submitting a service outcome should update the ticket, part state and follow-up task together. This removes reconciliation work from the operator and reduces “system says one thing, reality says another” failures.</p></div>
+<div class="decision"><div class="dlabel">System rule</div><h3>One user action, multiple synchronized records</h3><p>Submitting a service outcome should update the ticket, part state and follow-up task together. This removes reconciliation work from the operator and reduces "system says one thing, reality says another" failures.</p></div>
 </section>
 
 <section class="section">
-<div class="num">06</div><h2>Illustrative impact</h2>
+<div class="num">06</div><h2>Edge cases the model has to hold</h2>
+<div class="grid2">
+  <div class="card"><div class="eyebrow">PARTIAL STOCK</div><h3>Enough for one job, not two</h3><p>Two technicians diagnose the same failure the same morning — reservation has to be first-committed, not first-requested, to avoid double allocation.</p></div>
+  <div class="card"><div class="eyebrow">DEFECTIVE ON ARRIVAL</div><h3>Part fails inspection</h3><p>A received part that fails QA needs its own state — distinct from both "consumed" and "available" — so it doesn't silently re-enter the usable pool.</p></div>
+  <div class="card"><div class="eyebrow">CANCELLED VISIT</div><h3>Reservation with no job</h3><p>If a visit is cancelled after a part is reserved, the reservation needs an expiry or an explicit release step, or stock quietly disappears from the count.</p></div>
+  <div class="card"><div class="eyebrow">CROSS-HUB TRANSFER</div><h3>Nearest hub is out</h3><p>When the assigned service center lacks stock, the interface should suggest a transfer from the nearest hub with the part in "available" state, rather than surfacing "out of stock" as a dead end.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">07</div><h2>Illustrative impact</h2>
 <div class="stats">
   <div class="stat"><div class="v">~25%</div><div class="l">fewer repeat visits caused by part-availability surprises</div></div>
   <div class="stat"><div class="v">~40%</div><div class="l">less manual reconciliation between ticket and stock records</div></div>
@@ -133,9 +218,23 @@ footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);f
 <p class="note">Illustrative case-study metrics, not analytics contained in the project materials.</p>
 </section>
 
+<section class="section ux-process">
+<div class="num">Process</div><h2>Turning hand-drawn flows into a state model</h2>
+<div class="process-grid">
+  <div class="process-card"><div class="process-index">01</div><h4>Trace the flows</h4><p>Follow the hand-drawn diagrams from diagnosis through to closed ticket.</p></div>
+  <div class="process-card"><div class="process-index">02</div><h4>Name the states</h4><p>Turn implicit stock statuses into an explicit, exhaustive state list.</p></div>
+  <div class="process-card"><div class="process-index">03</div><h4>Stress-test edges</h4><p>Walk through double-booking, cancellation and defective-on-arrival scenarios.</p></div>
+  <div class="process-card"><div class="process-index">04</div><h4>Design the surface</h4><p>Bring diagnosis, estimate and stock into one screen instead of three.</p></div>
+  <div class="process-card"><div class="process-index">05</div><h4>Define the sync rule</h4><p>Specify exactly what one outcome submission updates downstream.</p></div>
+  <div class="process-card"><div class="process-index">06</div><h4>Document handoff</h4><p>Write the state model and sync rule up for engineering review.</p></div>
+</div>
+<div class="outcome-box"><strong>Outcome</strong><p>A shared state vocabulary that finance, service centers and engineers can all read the same way, instead of three separate interpretations of "in stock."</p></div>
+</section>
+
 <section class="section">
-<div class="num">07</div><h2>Reflection</h2>
+<div class="num">08</div><h2>Reflection</h2>
 <p>The strongest design insight is that enterprise modules should follow the business event, not the org chart. A customer repair can cross operations, inventory, finance and field service, but the user should experience <strong>one continuous job</strong>.</p>
+<p>The harder discipline is resisting the urge to model inventory as a separate product with its own dashboard. Every state added to the part lifecycle earns its place only if it changes what an operator or technician does next — otherwise it is just more status for someone to interpret.</p>
 </section>
 
 <div class="next"><a class="back" style="margin:0" href="index.html#/work">← All case studies</a><a class="btn" href="partner-portal-case-study.html">Next: Partner Portal →</a></div>

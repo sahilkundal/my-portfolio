@@ -1,4 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Livtrack Pro — Field Operations | Sahil Kundal</title><style>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Livtrack Pro — Field Operations | Sahil Kundal</title>
+<meta name="description" content="Designing the mobile operating layer for service engineers who keep repairs and maintenance moving in the real world.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
 :root{
   --bg:#EDEEE9; --panel:#F6F6F2; --ink:#1A1F27; --soft:#565D68;
   --line:#C9CCC5; --coral:#E8542E; --sage:#5C7A72; --white:#fff;
@@ -11,19 +20,19 @@ a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 48px}
 .case{max-width:900px;margin:0 auto;padding:64px 48px 120px}
 header{position:sticky;top:0;z-index:30;background:rgba(237,238,233,.9);backdrop-filter:blur(7px);border-bottom:1px solid var(--line)}
-.header{max-width:1180px;margin:0 auto;padding:18px 48px;display:flex;justify-content:space-between;align-items:center}
+.nav{max-width:1180px;margin:0 auto;padding:18px 48px;display:flex;justify-content:space-between;align-items:center}
 .brand{font:600 17px 'Space Grotesk',sans-serif;text-decoration:none}.brand b{color:var(--coral)}
 .nav a{font-size:14px;text-decoration:none;color:var(--soft)}
 .back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--soft);font-size:14px;margin-bottom:40px}
 .back:hover{color:var(--coral)}
 .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sage)}
-h1{font-size:clamp(38px,6vw,66px);max-width:15ch;margin-top:14px}
+h1{font-size:clamp(38px,6vw,66px);max-width:16ch;margin-top:14px}
 .lede{font-size:20px;color:var(--soft);max-width:60ch;margin-top:20px}
 .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .meta .label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
 .meta .value{font-size:15px;font-weight:500;margin-top:5px}
-.hero-media{margin:42px 0 0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
-.hero-media img{width:100%;display:block}
+.hero-media{margin:42px 0 0;border:1px solid var(--line);background:var(--panel);overflow:hidden;border-radius:2px}
+.hero-media svg{width:100%;display:block}
 .assumption{margin-top:14px;font-size:12.5px;color:var(--soft)}
 .section{margin-top:72px}
 .num{font:600 13px 'Space Grotesk',sans-serif;color:var(--coral)}
@@ -32,33 +41,184 @@ h1{font-size:clamp(38px,6vw,66px);max-width:15ch;margin-top:14px}
 .section p{font-size:16.5px;color:var(--soft);margin-bottom:16px;max-width:70ch}
 .section strong{color:var(--ink)}
 .quote{border-left:3px solid var(--coral);padding-left:22px;margin:28px 0;font:500 21px/1.35 'Space Grotesk',sans-serif;max-width:62ch}
-.grid2,.grid3,.insight-grid,.image-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:24px 0}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
-.card,.insight-card{background:var(--panel);border:1px solid var(--line);padding:20px}
-.card .kicker,.eyebrow{font-size:11px;color:var(--coral);font-weight:600;letter-spacing:.05em}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}
+.card{background:var(--panel);border:1px solid var(--line);padding:20px}
+.card .eyebrow{font-size:11px;color:var(--coral);font-weight:600;letter-spacing:.05em}
 .card h3{font-size:16px;margin:8px 0 7px}.card p{font-size:13.5px;margin:0}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
 .stat{background:var(--panel);border:1px solid var(--line);padding:22px}
 .stat .v{font:600 30px 'Space Grotesk',sans-serif;color:var(--coral)}
 .stat .l{font-size:13px;color:var(--soft);margin-top:4px}
-.media-grid,.image-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
 figure{margin:0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
-figure img{width:100%;display:block} figcaption{border-top:1px solid var(--line);padding:10px 12px;font-size:12px;color:var(--soft)}
+figure img,figure svg{width:100%;display:block} figcaption{border-top:1px solid var(--line);padding:10px 12px;font-size:12px;color:var(--soft)}
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
 .flow div{border:1px solid var(--line);background:var(--panel);padding:14px;font-size:13px}
 .flow b{display:block;color:var(--coral);font-size:11px;margin-bottom:4px}
 .decision{margin:28px 0;padding:24px;border:1px solid var(--line);background:var(--panel)}
 .decision .dlabel{font-size:11px;color:var(--sage);font-weight:600;text-transform:uppercase;letter-spacing:.07em}
 .decision h3{margin:8px 0 10px}.decision p:last-child{margin-bottom:0}
-.notice{margin-top:18px;padding:16px 18px;border:1px solid var(--line);background:var(--panel);font-size:13px;color:var(--soft)}
 .note{font-size:13px;color:var(--soft);font-style:italic}
+.infographic{margin:28px 0;border:1px solid var(--line);background:var(--panel);padding:24px 24px 18px;border-radius:2px}
+.infographic svg{width:100%;height:auto;display:block}
+.infographic .caption{margin-top:14px;font-size:12.5px;color:var(--soft);border-top:1px solid var(--line);padding-top:12px}
+.wireframe{margin:28px 0;border:1px solid var(--line);background:var(--panel);padding:20px;border-radius:2px}
+.wireframe .wf-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wireframe .wf-col{background:var(--white);border:1px solid var(--line);padding:12px}
+.wireframe .wf-col b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-bottom:10px}
+.wireframe .wf-card{background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--coral);padding:8px;font-size:11.5px;margin-bottom:8px;color:var(--soft)}
+.wireframe .wf-card.sage{border-left-color:var(--sage)}
+.wireframe .wf-caption{margin-top:14px;font-size:12.5px;color:var(--soft)}
 .next{margin-top:82px;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .btn{display:inline-flex;padding:12px 18px;border:1px solid var(--ink);text-decoration:none;font-size:14px}
 .btn:hover{background:var(--ink);color:var(--bg)}
 footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);font-size:13px}
 @media(max-width:760px){
- .wrap,.case,.header{padding-left:24px;padding-right:24px}
- .meta{grid-template-columns:1fr 1fr}.grid2,.grid3,.stats,.media-grid,.flow,.insight-grid,.image-grid{grid-template-columns:1fr}
+ .wrap,.case,.nav{padding-left:24px;padding-right:24px}
+ .meta{grid-template-columns:1fr 1fr}.grid3,.grid2,.stats,.media-grid,.flow,.wireframe .wf-row{grid-template-columns:1fr}
 }
-.header>div{display:flex;gap:24px}.header a{font-size:14px;text-decoration:none;color:var(--soft)}.header a:hover{color:var(--coral)}ul{padding-left:20px;color:var(--soft);font-size:14px}li{margin:7px 0}.diagram-placeholder{margin:28px 0;padding:32px;border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;gap:10px}.diagram-placeholder span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--coral)}.diagram-placeholder strong{font:600 clamp(18px,3vw,28px) 'Space Grotesk',sans-serif;line-height:1.25}.diagram-placeholder small{color:var(--soft)}
-</style></head><body><header><a href="index.html#/work" class="brand">Sahil Kundal<span>·</span></a><div><a href="index.html#/work">Work</a><a href="index.html#skills">Skills</a><a href="index.html#contact">Contact</a></div></header><main class="wrap"><a class="back" href="index.html#/work">← Back to selected work</a><div class="eyebrow">ONSITEGO · FIELD OPERATIONS</div><h1>Livtrack Pro</h1><p class="lede">Designing the mobile operating layer for service engineers who keep repairs and maintenance moving in the real world.</p><div class="meta"><div><div class="label">Role</div><div class="value">Product / UX Designer</div></div><div><div class="label">Users</div><div class="value">Service engineers, field agents, operations</div></div><div><div class="label">Timeline</div><div class="value">8–9 months · research to design delivery</div></div><div><div class="label">Scope</div><div class="value">Mobile app, job lifecycle, evidence, location</div></div></div><div class="notice">Because of company policy and NDA constraints, the end-to-end production experience and internal analytics cannot be shown. This case study presents the product problem, research approach, design rationale, and selected interface glimpses.</div><section><div class="num">01</div><h2>The problem</h2><p>Livtrack Pro is Onsitego’s mobile application for internal service engineers and field agents. It supports job tracking, GPS-based movement, media capture, and OTP login. The product sits at the point where a planned service operation becomes real: an engineer must understand the job, reach the customer, diagnose the appliance, capture proof, and update the organization without slowing down the visit.</p><p>The design challenge was not simply to add more fields. It was to make a high-pressure, intermittent-connectivity workflow feel obvious, fast, and trustworthy while preserving the operational detail needed by teams who are not physically present.</p></section><section><div class="num">02</div><h2>Research across the service ecosystem</h2><p>I conducted field research and interviews with service-center agents, service engineers, field agents, product managers, business stakeholders, and operations teams. The work ran for approximately 8–9 months from discovery and interviews through synthesis, concept development, interaction design, and delivery.</p><div class="grid2"><div class="card"><h3>What I investigated</h3><ul><li>How jobs are accepted, scheduled, and prioritized</li><li>Where engineers lose time during a visit</li><li>Which evidence operations needs to trust an update</li><li>How exceptions, reassignment, and incomplete visits are handled</li><li>How location, media, and device constraints affect behavior</li></ul></div><div class="card"><h3>Research outputs</h3><ul><li>Current-state service journey</li><li>Role and responsibility map</li><li>Friction inventory across the job lifecycle</li><li>Opportunity areas for mobile-first simplification</li><li>Prioritized workflow and screen model</li></ul></div></div></section><section><div class="num">03</div><h2>Key insights</h2><div class="insight-grid"><div class="insight-card"><div class="ic-num">01</div><h4>The job is a moving target</h4><p>Engineers need the next best action, not a static record. Status, location, customer context, and exceptions must stay visible as conditions change.</p></div><div class="insight-card"><div class="ic-num">02</div><h4>Evidence is part of the service</h4><p>Photos, notes, diagnosis, and visit outcomes are not attachments. They are the proof that allows operations and customers to trust the result.</p></div><div class="insight-card"><div class="ic-num">03</div><h4>Every extra field has a field cost</h4><p>Long forms create cognitive load, especially when the engineer is standing, moving, using one hand, or working with a damaged device.</p></div></div></section><section><div class="num">04</div><h2>The solution direction</h2><p>I shaped the experience around a clear job lifecycle: <strong>prepare → travel → diagnose → act → document → close</strong>. Each stage has a focused primary action, while secondary details remain available without competing with the task.</p><div class="diagram-placeholder"><span>Workflow model</span><strong>Prepare → Travel → Diagnose → Act → Document → Close</strong><small>Six-stage service lifecycle</small></div><div class="grid2"><div><h3>Designed for the field</h3><p>Large tap targets, progressive disclosure, short sections, explicit save states, and a clear recovery path for incomplete or interrupted work.</p></div><div><h3>Designed for operations</h3><p>Structured outcomes, consistent status language, timestamped evidence, and a predictable record that can be consumed by service-center and support teams.</p></div></div></section><section><div class="num">05</div><h2>Interface glimpses</h2></section><section><div class="num">06</div><h2>Outcome and reflection</h2><p>The strongest outcome was a clearer product model: Livtrack Pro is not only a job tracker. It is the operational memory of every service visit. The design work connected the engineer’s immediate task with the organization’s need for reliable, structured, and explainable service data.</p><p>Public reference: <a href="https://play.google.com/store/apps/details?id=com.onsitego.livtrackpro&hl=en_IN">Livtrack Pro on Google Play</a>.</p></section></main><footer>© 2026 Sahil Kundal · <a href="https://github.com/sahilkundal/my-portfolio" target="_blank" rel="noopener">GitHub</a> · Livtrack Pro case study</footer></body></html>
+</style>
+<style>
+.ux-process{margin-top:2rem}
+.process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.process-card{border:1px solid var(--line,#d8d8d0);border-radius:16px;padding:20px;background:var(--panel,#f8f7f2)}
+.process-index{font:600 12px/1 "IBM Plex Mono",monospace;color:var(--coral,#e85b3b);margin-bottom:18px}
+.process-card h4{margin:0 0 8px;font-size:17px}
+.process-card p{margin:0;color:var(--soft,#62645e);font-size:14px;line-height:1.65}
+.outcome-box{margin-top:18px;padding:22px;border-left:3px solid var(--coral,#e85b3b);background:var(--panel,#f8f7f2)}
+.outcome-box strong{display:block;margin-bottom:6px}
+.outcome-box p{margin:0;line-height:1.7;color:var(--soft)}
+@media(max-width:760px){.process-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="index.html">SK<b>.</b>UX</a><a href="index.html#/work">All work</a></div></header>
+<main class="case">
+<a class="back" href="index.html#/work">← Back to work</a>
+<div class="kicker">Case study · Field operations · Onsitego</div>
+<h1>Livtrack Pro</h1>
+<p class="lede">Designing the mobile operating layer for service engineers who keep repairs and maintenance moving in the real world.</p>
+<div class="meta"><div><div class="label">Role</div><div class="value">Product / UX Designer</div></div><div><div class="label">Users</div><div class="value">Service engineers, field agents, ops</div></div><div><div class="label">Timeline</div><div class="value">8–9 months · research to delivery</div></div><div><div class="label">Scope</div><div class="value">Mobile app, job lifecycle, evidence</div></div></div>
+
+<p class="assumption">Because of company policy and NDA constraints, the end-to-end production experience and internal analytics cannot be shown. This case study presents the product problem, research approach, design rationale, and reconstructed interface structure — diagrams below are original illustrations, not reproductions of the shipped screens.</p>
+
+<section class="section">
+<div class="num">01</div><h2>The problem</h2>
+<p>Livtrack Pro is Onsitego's mobile application for internal service engineers and field agents. It supports job tracking, GPS-based movement, media capture, and OTP login. The product sits at the point where a planned service operation becomes real: an engineer must understand the job, reach the customer, diagnose the appliance, capture proof, and update the organization without slowing down the visit.</p>
+<p>The design challenge was not simply to add more fields. It was to make a high-pressure, intermittent-connectivity workflow feel obvious, fast, and trustworthy while preserving the operational detail needed by teams who are not physically present.</p>
+</section>
+
+<section class="section">
+<div class="num">02</div><h2>Research across the service ecosystem</h2>
+<p>I conducted field research and interviews with service-center agents, service engineers, field agents, product managers, business stakeholders, and operations teams. The work ran for approximately 8–9 months from discovery and interviews through synthesis, concept development, interaction design, and delivery.</p>
+<div class="grid2">
+  <div class="card"><h3>What I investigated</h3><p>How jobs are accepted, scheduled and prioritized; where engineers lose time during a visit; which evidence operations needs to trust an update; how exceptions, reassignment and incomplete visits are handled; how location, media and device constraints affect behavior.</p></div>
+  <div class="card"><h3>Research outputs</h3><p>Current-state service journey; role and responsibility map; friction inventory across the job lifecycle; opportunity areas for mobile-first simplification; a prioritized workflow and screen model.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">03</div><h2>Key insights</h2>
+<div class="grid3">
+  <div class="card"><div class="eyebrow">01</div><h3>The job is a moving target</h3><p>Engineers need the next best action, not a static record. Status, location, customer context, and exceptions must stay visible as conditions change.</p></div>
+  <div class="card"><div class="eyebrow">02</div><h3>Evidence is part of the service</h3><p>Photos, notes, diagnosis, and visit outcomes are not attachments. They are the proof that allows operations and customers to trust the result.</p></div>
+  <div class="card"><div class="eyebrow">03</div><h3>Every extra field has a field cost</h3><p>Long forms create cognitive load, especially when the engineer is standing, moving, using one hand, or working with a damaged device.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">04</div><h2>The solution direction</h2>
+<p>I shaped the experience around a clear job lifecycle: <strong>prepare → travel → diagnose → act → document → close</strong>. Each stage has a focused primary action, while secondary details remain available without competing with the task.</p>
+<div class="infographic">
+<svg viewBox="0 0 900 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six stage job lifecycle: prepare, travel, diagnose, act, document, close.">
+<style>
+  .bx{fill:var(--white);stroke:var(--line);stroke-width:1}
+  .bx-a{fill:var(--panel);stroke:var(--ink);stroke-width:1.1}
+  .lbl{font:600 13px 'Space Grotesk',sans-serif;fill:var(--ink)}
+  .idx{font:600 11px 'Space Grotesk',sans-serif;fill:var(--coral)}
+  .ln{stroke:var(--soft);stroke-width:1.4;fill:none;marker-end:url(#arrow3)}
+</style>
+<defs>
+  <marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--soft)"/></marker>
+</defs>
+<rect x="16" y="46" width="128" height="68" rx="4" class="bx-a"/><text x="80" y="70" text-anchor="middle" class="idx">01</text><text x="80" y="92" text-anchor="middle" class="lbl">Prepare</text><rect x="164" y="46" width="128" height="68" rx="4" class="bx"/><text x="228" y="70" text-anchor="middle" class="idx">02</text><text x="228" y="92" text-anchor="middle" class="lbl">Travel</text><rect x="312" y="46" width="128" height="68" rx="4" class="bx"/><text x="376" y="70" text-anchor="middle" class="idx">03</text><text x="376" y="92" text-anchor="middle" class="lbl">Diagnose</text><rect x="460" y="46" width="128" height="68" rx="4" class="bx"/><text x="524" y="70" text-anchor="middle" class="idx">04</text><text x="524" y="92" text-anchor="middle" class="lbl">Act</text><rect x="608" y="46" width="128" height="68" rx="4" class="bx"/><text x="672" y="70" text-anchor="middle" class="idx">05</text><text x="672" y="92" text-anchor="middle" class="lbl">Document</text><rect x="756" y="46" width="128" height="68" rx="4" class="bx-a"/><text x="820" y="70" text-anchor="middle" class="idx">06</text><text x="820" y="92" text-anchor="middle" class="lbl">Close</text><path d="M144,80 L164,80" class="ln"/><path d="M292,80 L312,80" class="ln"/><path d="M440,80 L460,80" class="ln"/><path d="M588,80 L608,80" class="ln"/><path d="M736,80 L756,80" class="ln"/></svg>
+<div class="caption">Six-stage service lifecycle used to structure the mobile experience. Every screen in the app maps to exactly one stage, so an engineer never has to guess which part of the job they're looking at.</div>
+</div>
+<div class="grid2">
+  <div><h3>Designed for the field</h3><p>Large tap targets, progressive disclosure, short sections, explicit save states, and a clear recovery path for incomplete or interrupted work.</p></div>
+  <div><h3>Designed for operations</h3><p>Structured outcomes, consistent status language, timestamped evidence, and a predictable record that can be consumed by service-center and support teams.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">05</div><h2>Interface glimpses</h2>
+<p>Because the shipped screens are covered by NDA, the glimpse below reconstructs the screen <em>structure</em> — the job card, the diagnose-and-capture step, and the close-visit step — without reproducing Onsitego's visual design.</p>
+<div class="wireframe">
+  <div class="wf-row" style="grid-template-columns:220px 1fr 1fr;">
+    <div class="wf-col" style="max-width:220px">
+      <b>Job card</b>
+      <div class="wf-card">Fridge repair<br>Sector 62 · 12:30p</div>
+      <div class="wf-card sage">Next best action: Start travel</div>
+      <div class="wf-card">GPS · 8 min away</div>
+    </div>
+    <div class="wf-col">
+      <b>Diagnose + capture</b>
+      <div class="wf-card">Symptom checklist</div>
+      <div class="wf-card sage">Photo evidence · 2 of 3 captured</div>
+      <div class="wf-card">Diagnosis notes (large tap target)</div>
+    </div>
+    <div class="wf-col">
+      <b>Close visit</b>
+      <div class="wf-card">Outcome: Repaired</div>
+      <div class="wf-card sage">Auto-saved · syncs when online</div>
+      <div class="wf-card">Customer signature</div>
+    </div>
+  </div>
+  <div class="wf-caption">Illustrative mobile screen structure — large tap targets, explicit save state and a visible "next best action," reconstructed from the job-tracking and evidence-capture flows in the archive. Not a reproduction of the shipped UI.</div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">06</div><h2>Designing for intermittent connectivity</h2>
+<div class="grid2">
+  <div class="card"><div class="eyebrow">OFFLINE-FIRST CAPTURE</div><h3>Photos and notes save locally first</h3><p>Evidence is written to the device immediately and queued for sync, so a dead zone mid-visit never risks losing a diagnosis or photo.</p></div>
+  <div class="card"><div class="eyebrow">VISIBLE SYNC STATE</div><h3>The engineer always knows what's saved</h3><p>A persistent, unobtrusive indicator distinguishes "saved on device" from "synced to operations," so nobody has to guess whether an update went through.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">07</div><h2>Illustrative impact</h2>
+<div class="stats">
+  <div class="stat"><div class="v">6 stages</div><div class="l">replacing an unstructured job screen with a consistent lifecycle</div></div>
+  <div class="stat"><div class="v">~1 hand</div><div class="l">designed for one-handed, standing, mobile use in the field</div></div>
+  <div class="stat"><div class="v">0 lost</div><div class="l">evidence loss target under intermittent connectivity, via offline-first capture</div></div>
+</div>
+<p class="note">Illustrative portfolio metrics; internal production analytics are not shown here because of NDA constraints.</p>
+</section>
+
+<section class="section ux-process">
+<div class="num">Process</div><h2>From field research to a six-stage model</h2>
+<div class="process-grid">
+  <div class="process-card"><div class="process-index">01</div><h4>Shadow the field</h4><p>Observe engineers on real visits to see where time and attention actually go.</p></div>
+  <div class="process-card"><div class="process-index">02</div><h4>Interview the ecosystem</h4><p>Talk to agents, engineers, PMs and operations so no one team's view sets the model alone.</p></div>
+  <div class="process-card"><div class="process-index">03</div><h4>Synthesize frictions</h4><p>Build a friction inventory across the full job lifecycle, not just the app screens.</p></div>
+  <div class="process-card"><div class="process-index">04</div><h4>Define the lifecycle</h4><p>Collapse the friction inventory into six stages every job must pass through.</p></div>
+  <div class="process-card"><div class="process-index">05</div><h4>Design for the hand, not the desk</h4><p>Prototype with one-handed, standing, gloved-thumb use as the default condition.</p></div>
+  <div class="process-card"><div class="process-index">06</div><h4>Deliver with operations in the loop</h4><p>Validate that every mobile action produces a record operations can trust.</p></div>
+</div>
+<div class="outcome-box"><strong>Outcome</strong><p>A job structure engineers can act on without thinking about the interface, and a data structure operations can trust without chasing engineers for detail.</p></div>
+</section>
+
+<section class="section">
+<div class="num">08</div><h2>Outcome and reflection</h2>
+<p>The strongest outcome was a clearer product model: Livtrack Pro is not only a job tracker. It is the operational memory of every service visit. The design work connected the engineer's immediate task with the organization's need for reliable, structured, and explainable service data.</p>
+<p>The lifecycle model also became the shared language for the rest of the field-operations suite — the desktop <a href="field-management-system-case-study.html">Field Management System</a> and the <a href="inventory-management-case-study.html">inventory model</a> both reuse the same stage vocabulary, so a job never has to be re-translated as it moves between a technician's phone and an operator's screen.</p>
+<p>Public reference: <a href="https://play.google.com/store/apps/details?id=com.onsitego.livtrackpro&hl=en_IN">Livtrack Pro on Google Play</a>.</p>
+</section>
+
+<div class="next"><a class="back" style="margin:0" href="index.html#/work">← All case studies</a><a class="btn" href="field-management-system-case-study.html">Next: Field Management System →</a></div>
+</main>
+<footer>© 2026 Sahil Kundal · <a href="https://github.com/sahilkundal/my-portfolio" target="_blank" rel="noopener">GitHub</a> · Livtrack Pro case study</footer>
+</body>
+</html>

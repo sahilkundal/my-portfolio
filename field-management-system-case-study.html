@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Management System — Sahil Kundal</title>
+<meta name="description" content="Turning a dense service-operations console into an exception-first command center for dispatching, reassignment and SLA recovery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDEEE9; --panel:#F6F6F2; --ink:#1A1F27; --soft:#565D68;
+  --line:#C9CCC5; --coral:#E8542E; --sage:#5C7A72; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;line-height:1.65}
+h1,h2,h3,h4,.display{font-family:'Space Grotesk',sans-serif;letter-spacing:-.015em;line-height:1.08}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 48px}
+.case{max-width:900px;margin:0 auto;padding:64px 48px 120px}
+header{position:sticky;top:0;z-index:30;background:rgba(237,238,233,.9);backdrop-filter:blur(7px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:0 auto;padding:18px 48px;display:flex;justify-content:space-between;align-items:center}
+.brand{font:600 17px 'Space Grotesk',sans-serif;text-decoration:none}.brand b{color:var(--coral)}
+.nav a{font-size:14px;text-decoration:none;color:var(--soft)}
+.back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--soft);font-size:14px;margin-bottom:40px}
+.back:hover{color:var(--coral)}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sage)}
+h1{font-size:clamp(38px,6vw,66px);max-width:16ch;margin-top:14px}
+.lede{font-size:20px;color:var(--soft);max-width:60ch;margin-top:20px}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meta .label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
+.meta .value{font-size:15px;font-weight:500;margin-top:5px}
+.hero-media{margin:42px 0 0;border:1px solid var(--line);background:var(--panel);overflow:hidden;border-radius:2px}
+.hero-media svg{width:100%;display:block}
+.assumption{margin-top:14px;font-size:12.5px;color:var(--soft)}
+.section{margin-top:72px}
+.num{font:600 13px 'Space Grotesk',sans-serif;color:var(--coral)}
+.section h2{font-size:clamp(26px,3.5vw,38px);margin:10px 0 20px}
+.section h3{font-size:20px;margin:28px 0 10px}
+.section p{font-size:16.5px;color:var(--soft);margin-bottom:16px;max-width:70ch}
+.section strong{color:var(--ink)}
+.quote{border-left:3px solid var(--coral);padding-left:22px;margin:28px 0;font:500 21px/1.35 'Space Grotesk',sans-serif;max-width:62ch}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}
+.card{background:var(--panel);border:1px solid var(--line);padding:20px}
+.card .eyebrow{font-size:11px;color:var(--coral);font-weight:600;letter-spacing:.05em}
+.card h3{font-size:16px;margin:8px 0 7px}.card p{font-size:13.5px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.stat{background:var(--panel);border:1px solid var(--line);padding:22px}
+.stat .v{font:600 30px 'Space Grotesk',sans-serif;color:var(--coral)}
+.stat .l{font-size:13px;color:var(--soft);margin-top:4px}
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
+figure{margin:0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
+figure img,figure svg{width:100%;display:block} figcaption{border-top:1px solid var(--line);padding:10px 12px;font-size:12px;color:var(--soft)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
+.flow div{border:1px solid var(--line);background:var(--panel);padding:14px;font-size:13px}
+.flow b{display:block;color:var(--coral);font-size:11px;margin-bottom:4px}
+.decision{margin:28px 0;padding:24px;border:1px solid var(--line);background:var(--panel)}
+.decision .dlabel{font-size:11px;color:var(--sage);font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+.decision h3{margin:8px 0 10px}.decision p:last-child{margin-bottom:0}
+.note{font-size:13px;color:var(--soft);font-style:italic}
+.infographic{margin:28px 0;border:1px solid var(--line);background:var(--panel);padding:24px 24px 18px;border-radius:2px}
+.infographic svg{width:100%;height:auto;display:block}
+.infographic .caption{margin-top:14px;font-size:12.5px;color:var(--soft);border-top:1px solid var(--line);padding-top:12px}
+.wireframe{margin:28px 0;border:1px solid var(--line);background:var(--panel);padding:20px;border-radius:2px}
+.wireframe .wf-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wireframe .wf-col{background:var(--white);border:1px solid var(--line);padding:12px}
+.wireframe .wf-col b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-bottom:10px}
+.wireframe .wf-card{background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--coral);padding:8px;font-size:11.5px;margin-bottom:8px;color:var(--soft)}
+.wireframe .wf-card.sage{border-left-color:var(--sage)}
+.wireframe .wf-caption{margin-top:14px;font-size:12.5px;color:var(--soft)}
+.next{margin-top:82px;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.btn{display:inline-flex;padding:12px 18px;border:1px solid var(--ink);text-decoration:none;font-size:14px}
+.btn:hover{background:var(--ink);color:var(--bg)}
+footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);font-size:13px}
+@media(max-width:760px){
+ .wrap,.case,.nav{padding-left:24px;padding-right:24px}
+ .meta{grid-template-columns:1fr 1fr}.grid3,.grid2,.stats,.media-grid,.flow,.wireframe .wf-row{grid-template-columns:1fr}
+}
+</style>
+<style>
+.ux-process{margin-top:2rem}
+.process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.process-card{border:1px solid var(--line,#d8d8d0);border-radius:16px;padding:20px;background:var(--panel,#f8f7f2)}
+.process-index{font:600 12px/1 "IBM Plex Mono",monospace;color:var(--coral,#e85b3b);margin-bottom:18px}
+.process-card h4{margin:0 0 8px;font-size:17px}
+.process-card p{margin:0;color:var(--soft,#62645e);font-size:14px;line-height:1.65}
+.outcome-box{margin-top:18px;padding:22px;border-left:3px solid var(--coral,#e85b3b);background:var(--panel,#f8f7f2)}
+.outcome-box strong{display:block;margin-bottom:6px}
+.outcome-box p{margin:0;line-height:1.7;color:var(--soft)}
+@media(max-width:760px){.process-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="index.html">SK<b>.</b>UX</a><a href="index.html#/work">All work</a></div></header>
+<main class="case">
+<a class="back" href="index.html#/work">← Back to work</a>
+<div class="kicker">Case study · Enterprise operations · Onsitego</div>
+<h1>Field Management System</h1>
+<p class="lede">Turning a dense service-operations console into an exception-first command center for dispatching, reassignment and SLA recovery.</p>
+<div class="meta"><div><div class="label">My Role</div><div class="value">Product / UX Designer</div></div><div><div class="label">Users</div><div class="value">Ops + regional managers</div></div><div><div class="label">Timeline</div><div class="value">2024 · assumed 12–16 weeks</div></div><div><div class="label">Surface</div><div class="value">Desktop web</div></div></div>
+
+<p class="assumption">Portfolio reconstruction note: the product scope and UI are grounded in the uploaded Figma artifacts. Where the source file does not contain research counts or business analytics, impact figures are clearly presented as illustrative estimates to replace with actual data later. Diagrams below are original illustrations of the reconstructed model, not reproductions of the source screens.</p>
+
+<section class="section">
+<div class="num">01</div><h2>Context: hundreds of jobs, one operations team, no room for ambiguity</h2>
+<p>The <strong>Field Management System + Livtrack 2024</strong> archive contains dense job tables, queue views, reassignment states, modal controls, sorting/filtering patterns and whiteboard system maps. The product reads as an operations command center for coordinating field-service work at scale — the desktop counterpart to the mobile experience covered in the <a href="livtrack-pro-case-study.html">Livtrack Pro case study</a>.</p>
+
+<p class="quote">The core UX challenge was not displaying more service data. It was helping an operator answer three questions immediately: What is stuck? Why is it stuck? What can I do about it?</p>
+</section>
+
+<section class="section">
+<div class="num">02</div><h2>Users and jobs-to-be-done</h2>
+<div class="grid3">
+  <div class="card"><div class="eyebrow">OPERATIONS</div><h3>Dispatch coordinators</h3><p>Find unassigned or delayed jobs, match the right engineer, and keep appointments moving.</p></div>
+  <div class="card"><div class="eyebrow">MANAGEMENT</div><h3>Regional / service managers</h3><p>Understand queue health, bottlenecks and SLA risk across teams.</p></div>
+  <div class="card"><div class="eyebrow">FIELD</div><h3>Service engineers</h3><p>Receive clear assignments and avoid unnecessary reassignment or escalation loops.</p></div>
+</div>
+<p>Reading the artifact set as a job-to-be-done rather than a screen inventory reframes the console: a dispatcher does not want "a table of jobs," they want <strong>the next job that needs a human decision</strong>, surfaced without a manual scan.</p>
+</section>
+
+<section class="section">
+<div class="num">03</div><h2>How a job actually moves through the system</h2>
+<p>Before proposing a layout, it helps to make the underlying state model explicit. Most of a job's life is uneventful — assigned, en route, in progress, closed — but the interface earns its keep in the branches: what happens when a job goes off-track.</p>
+<div class="infographic">
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Job exception state flow: unassigned to assigned, then either on track to resolved, or at risk to reassigned and resolved.">
+<style>
+  .bx{fill:var(--white);stroke:var(--line);stroke-width:1}
+  .bx-risk{fill:var(--coral);fill-opacity:.12;stroke:var(--coral)}
+  .bx-done{fill:var(--sage);fill-opacity:.16;stroke:var(--sage)}
+  .lbl{font:600 13px 'Space Grotesk',sans-serif;fill:var(--ink)}
+  .sub{font:400 11px 'IBM Plex Sans',sans-serif;fill:var(--soft)}
+  .ln{stroke:var(--soft);stroke-width:1.4;fill:none;marker-end:url(#arrow)}
+  .ln-risk{stroke:var(--coral);stroke-width:1.4;fill:none;stroke-dasharray:4 3;marker-end:url(#arrowRisk)}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--soft)"/></marker>
+  <marker id="arrowRisk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--coral)"/></marker>
+</defs>
+<rect x="16" y="30" width="140" height="60" rx="4" class="bx"/>
+<text x="86" y="55" text-anchor="middle" class="lbl">New job</text>
+<text x="86" y="72" text-anchor="middle" class="sub">enters queue</text>
+
+<rect x="196" y="30" width="140" height="60" rx="4" class="bx"/>
+<text x="266" y="55" text-anchor="middle" class="lbl">Unassigned</text>
+<text x="266" y="72" text-anchor="middle" class="sub">needs an engineer</text>
+
+<rect x="376" y="30" width="140" height="60" rx="4" class="bx"/>
+<text x="446" y="55" text-anchor="middle" class="lbl">Assigned</text>
+<text x="446" y="72" text-anchor="middle" class="sub">engineer notified</text>
+
+<rect x="556" y="30" width="150" height="60" rx="4" class="bx bx-done"/>
+<text x="631" y="55" text-anchor="middle" class="lbl">On track</text>
+<text x="631" y="72" text-anchor="middle" class="sub">appointment kept</text>
+
+<rect x="746" y="30" width="140" height="60" rx="4" class="bx bx-done"/>
+<text x="816" y="55" text-anchor="middle" class="lbl">Resolved</text>
+<text x="816" y="72" text-anchor="middle" class="sub">SLA met</text>
+
+<rect x="376" y="190" width="150" height="70" rx="4" class="bx bx-risk"/>
+<text x="451" y="215" text-anchor="middle" class="lbl">At risk / blocked</text>
+<text x="451" y="232" text-anchor="middle" class="sub">delay, part missing,</text>
+<text x="451" y="246" text-anchor="middle" class="sub">customer no-show</text>
+
+<rect x="566" y="190" width="150" height="70" rx="4" class="bx bx-risk"/>
+<text x="641" y="215" text-anchor="middle" class="lbl">Reassignment</text>
+<text x="641" y="232" text-anchor="middle" class="sub">guided modal:</text>
+<text x="641" y="246" text-anchor="middle" class="sub">new engineer matched</text>
+
+<rect x="746" y="190" width="140" height="70" rx="4" class="bx">
+<title>SLA recovery</title>
+</rect>
+<text x="816" y="215" text-anchor="middle" class="lbl">SLA recovery</text>
+<text x="816" y="232" text-anchor="middle" class="sub">re-slotted,</text>
+<text x="816" y="246" text-anchor="middle" class="sub">customer notified</text>
+
+<path d="M156,60 L196,60" class="ln"/>
+<path d="M336,60 L376,60" class="ln"/>
+<path d="M516,60 L556,60" class="ln"/>
+<path d="M706,60 L746,60" class="ln"/>
+<path d="M446,90 L446,150 L451,190" class="ln-risk"/>
+<path d="M526,225 L566,225" class="ln-risk"/>
+<path d="M716,225 L746,225" class="ln-risk"/>
+<path d="M816,190 L816,90" class="ln-risk"/>
+</svg>
+<div class="caption">Reconstructed state model for a service job, based on the reassignment and status artifacts in the archive. The branch into "At risk / blocked" is where the console needs to do the most work.</div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">04</div><h2>Decision 1 — organize the product around operational exceptions</h2>
+<p>A standard CRM-style table makes every row look equally important. But an operator's real job is exception handling. I would use <strong>queue status, SLA state, assignment health and blocking reason</strong> as the primary hierarchy, with customer and device details supporting that decision rather than competing with it.</p>
+<div class="decision"><div class="dlabel">Information hierarchy</div><h3>Signal first, detail second</h3><p>Color/status treatments should be reserved for operational meaning — overdue, blocked, unassigned, waiting — not decorative categorization. Secondary details can remain available through row expansion or a side panel.</p></div>
+</section>
+
+<section class="section">
+<div class="num">05</div><h2>Decision 2 — make reassignment a guided workflow</h2>
+<p>The Figma artifact includes modal states for changing service assignment. This is a high-cost action: the wrong reassignment can create missed appointments, duplicate travel or SLA breaches. I would structure the modal around the operator's decision rather than a raw dropdown list.</p>
+<div class="flow">
+  <div><b>01</b>Explain current blocker</div>
+  <div><b>02</b>Show eligible engineers</div>
+  <div><b>03</b>Expose distance / capacity / skill</div>
+  <div><b>04</b>Confirm customer impact</div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">06</div><h2>Decision 3 — connect queues to the mental model operators already use</h2>
+<p>The artifact includes board-like queue groupings and dense filtered states. That suggests operators were already thinking in operational buckets. The design opportunity is to turn those buckets into <strong>saved, action-oriented work queues</strong>: "needs assignment," "appointment at risk," "awaiting part," "customer reschedule," and similar slices that map directly to daily work.</p>
+<div class="wireframe">
+  <div class="wf-row">
+    <div class="wf-col"><b>Needs assignment (7)</b>
+      <div class="wf-card">AC repair · Sector 62 · due 2:30p</div>
+      <div class="wf-card">Geyser install · Sector 18 · due 4p</div>
+      <div class="wf-card">RO service · Indirapuram</div>
+    </div>
+    <div class="wf-col"><b>Appointment at risk (3)</b>
+      <div class="wf-card">Fridge repair · engineer 40 min late</div>
+      <div class="wf-card">Washing machine · part pending</div>
+    </div>
+    <div class="wf-col"><b>Awaiting part (5)</b>
+      <div class="wf-card sage">Compressor · ETA tomorrow</div>
+      <div class="wf-card sage">Display panel · in transit</div>
+    </div>
+    <div class="wf-col"><b>Customer reschedule (2)</b>
+      <div class="wf-card">Chimney service · new slot needed</div>
+    </div>
+  </div>
+  <div class="wf-caption">Illustrative queue layout — saved, action-oriented buckets replacing a single flat job table. Row counts and content are placeholders for the reconstructed interface.</div>
+</div>
+</section>
+
+<section class="section">
+<div class="num">07</div><h2>Illustrative impact</h2>
+<div class="stats">
+  <div class="stat"><div class="v">~35%</div><div class="l">less time spent finding the next job needing intervention</div></div>
+  <div class="stat"><div class="v">~22%</div><div class="l">fewer avoidable reassignment loops</div></div>
+  <div class="stat"><div class="v">1 view</div><div class="l">replaces spreadsheet + chat + ad-hoc queue checking</div></div>
+</div>
+<p class="note">Illustrative portfolio metrics. Replace with actual dispatch, SLA and reassignment analytics when available.</p>
+</section>
+
+<section class="section ux-process">
+<div class="num">Process</div><h2>How the redesign direction was formed</h2>
+<div class="process-grid">
+  <div class="process-card"><div class="process-index">01</div><h4>Inventory</h4><p>Catalogue every job state, filter, modal and queue view present in the source artifacts.</p></div>
+  <div class="process-card"><div class="process-index">02</div><h4>Model</h4><p>Reconstruct the underlying job state machine — where jobs get stuck and why.</p></div>
+  <div class="process-card"><div class="process-index">03</div><h4>Reframe</h4><p>Re-organize the console around exceptions instead of a flat, undifferentiated table.</p></div>
+  <div class="process-card"><div class="process-index">04</div><h4>Prototype queues</h4><p>Translate operational buckets into saved, action-oriented views.</p></div>
+  <div class="process-card"><div class="process-index">05</div><h4>Design the modal</h4><p>Sequence the reassignment flow around the operator's decision, not a raw list.</p></div>
+  <div class="process-card"><div class="process-index">06</div><h4>Validate</h4><p>Check the model against edge cases: no eligible engineer, repeat blockers, mass reassignment.</p></div>
+</div>
+<div class="outcome-box"><strong>Outcome</strong><p>An operations console organized around what an operator needs to decide next, not around every field the database happens to store.</p></div>
+</section>
+
+<section class="section">
+<div class="num">08</div><h2>Reflection</h2>
+<p>Dense enterprise interfaces are not automatically bad. In operational software, density is often a feature — as long as the hierarchy reflects the decisions people make. The redesign principle here is <strong>make the next intervention obvious without hiding the context an expert operator needs</strong>.</p>
+<p>The harder lesson is that exception handling is a spectrum, not a binary. A job that is "at risk" today and "blocked" tomorrow needs a console that reflects gradual degradation, not just a green/red status chip — which is why the state model in section 03 treats risk as a branch with its own recovery path, rather than a dead end.</p>
+</section>
+
+<div class="next"><a class="back" style="margin:0" href="index.html#/work">← All case studies</a><a class="btn" href="inventory-management-case-study.html">Next: Inventory Management →</a></div>
+</main>
+<footer>© 2026 Sahil Kundal · <a href="https://github.com/sahilkundal/my-portfolio" target="_blank" rel="noopener">GitHub</a> · Case study reconstructed from project artifacts</footer>
+</body>
+</html>

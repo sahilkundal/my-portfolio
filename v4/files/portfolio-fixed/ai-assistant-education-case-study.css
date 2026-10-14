@@ -1,0 +1,9 @@
+body {
+  --coral: #E8542E;
+  --sage: #5C7A72;
+  --case-accent: #E8542E;
+}
+
+.case-study-pager a:focus-visible {
+  outline-color: #E8542E;
+}

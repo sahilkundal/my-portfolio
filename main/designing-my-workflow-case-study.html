@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Designing my own workflow — Sahil Kundal</title>
+  <meta name="description" content="Independent · Design Automation case study by Sahil Kundal, Senior UX Designer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="case-study.css">
+  <link rel="stylesheet" href="case-study-detail.css">
+    <link rel="stylesheet" href="designing-my-workflow-case-study.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="portfolio-theme.css" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="nav-mark" href="index.html" aria-label="Sahil Kundal, home"><span class="nav-mark-icon" aria-hidden="true">SK</span><span class="nav-wordmark">Sahil Kundal<small>Senior UX Designer</small></span></a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="work.html" aria-current="page">Work</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+<section class="view active" id="view-case-automation">
+    <div class="case case-page">
+      <a class="back-link" href="work.html"><svg viewBox="0 0 14 14"><polyline points="6,1 1,7 6,13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>Back to work</a>
+
+      <div class="cp-kicker">Case study 04 · Design Automation</div>
+      <h1 class="cp-title">Designing my own workflow</h1>
+      <p class="cp-sub">An AI-assisted annotation engine that closes the gap between a coded interface and its original UX spec.</p>
+
+      <div class="cp-meta">
+        <div class="cp-meta-item"><div class="label">My Role</div><div class="value">Design automation, solo build</div></div>
+        <div class="cp-meta-item"><div class="label">Timeline</div><div class="value">2025 —</div></div>
+        <div class="cp-meta-item"><div class="label">Tools</div><div class="value">Cline, React/HTML/CSS</div></div>
+        <div class="cp-meta-item"><div class="label">Org</div><div class="value">Samsung R&amp;D Institute India</div></div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">01</div>
+        <h3>The problem</h3>
+        <p>Design-to-development handoff kept losing fidelity in the gap between a coded interface and its original UX spec. Every release cycle, someone had to manually re-read a spec, open the built interface, and write down what changed, what was missed, and what still needed a decision — a task that was repetitive, easy to get wrong under deadline pressure, and never actually removed from anyone's plate no matter how many times it was done.</p>
+        <div class="friction-grid cols-3">
+          <div class="friction-card"><div class="fc-num">01</div><h4>Spec drift</h4><p>A coded screen quietly diverges from its original spec over several sprints, and nobody notices until QA or a stakeholder flags it.</p></div>
+          <div class="friction-card"><div class="fc-num">02</div><h4>Manual annotation</h4><p>Writing structured, readable annotations by hand for every screen change was slow and inconsistent between reviewers.</p></div>
+          <div class="friction-card"><div class="fc-num">03</div><h4>Disconnected tracking</h4><p>Fixes surfaced in review had to be manually re-typed into Jira as separate tickets, losing context in the process.</p></div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">02</div>
+        <h3>What I built</h3>
+        <p>An AI-assisted UX Annotation Engine that analyzes coded interfaces against UX specifications and auto-generates structured annotation documentation — plus automation tooling that generates workflow and architecture diagrams directly from code, and Jira automation for card creation, assignment, and status recommendations.</p>
+        <div class="diagram">
+          <div class="d-step"><span>INPUT</span>Coded interface + UX spec</div>
+          <div class="d-arrow">→</div>
+          <div class="d-step"><span>ANALYZE</span>AI diff against spec intent</div>
+          <div class="d-arrow">→</div>
+          <div class="d-step"><span>ANNOTATE</span>Structured documentation</div>
+          <div class="d-arrow">→</div>
+          <div class="d-step"><span>ACT</span>Jira cards, auto-assigned</div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">03</div>
+        <h3>Why this matters</h3>
+        <p>Most designers treat AI as a tool for making screens faster. I treat it as a tool for making the <em>process</em> around screens faster — the same systems instinct from the design-system work, applied to my own workflow instead of a component library.</p>
+        <div class="insight-grid">
+          <div class="insight-card"><div class="ic-num">01</div><h4>Documentation stops decaying</h4><p>Annotations are generated from the current state of the build, not from memory of what the spec used to say.</p></div>
+          <div class="insight-card"><div class="ic-num">02</div><h4>Review time goes to judgment, not transcription</h4><p>The tool surfaces the diff; the reviewer spends their time deciding what matters, not typing it up.</p></div>
+          <div class="insight-card"><div class="ic-num">03</div><h4>Handoff becomes a byproduct, not a task</h4><p>Diagrams and tickets are generated as a side effect of the analysis step instead of a separate chore afterward.</p></div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">04</div>
+        <h3>Reflection</h3>
+        <p>This is a small project by scope, but it changed how I think about my own tools: the same discipline I'd apply to a component library — inventory the repeated problem, find the reusable rule, automate the boring part — works just as well pointed at my own workflow as it does pointed at a design system.</p>
+      </div>
+
+      <div class="cp-nav-footer">
+        <a class="back-link" href="work.html" style="margin-bottom:0;"><svg viewBox="0 0 14 14"><polyline points="6,1 1,7 6,13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>All case studies</a>
+      </div>
+      <nav class="case-study-pager" aria-label="Move between case studies">
+        <a href="partner-portal-case-study.html"><span>← Previous case study</span><strong>Partner Service Portal</strong></a>
+        <a href="skinthesis-case-study.html"><span>Next case study →</span><strong>Skinthesis</strong></a>
+      </nav>
+    </div>
+  </section>
+  </main>
+  <footer class="site-footer container"><span>© 2026 Sahil Kundal</span><a href="contact.html">Say hello <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

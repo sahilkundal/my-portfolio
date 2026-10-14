@@ -1,0 +1,54 @@
+:root,
+body {
+  --color-background: #f7f6f1;
+  --color-surface: #fffefa;
+  --color-ink: #242923;
+  --color-muted: #57625a;
+  --color-line: #dcded6;
+  --color-tint: #e9eee9;
+  --color-accent: #a75338;
+  --color-sage: #315c4d;
+  --font-display: "DM Sans", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  --bg: #f7f6f1;
+  --bg-panel: #fffefa;
+  --panel: #fffefa;
+  --ink: #242923;
+  --ink-soft: #57625a;
+  --muted: #57625a;
+  --line: #dcded6;
+  --coral: #a75338;
+  --sage: #315c4d;
+  --sage2: #e3ebe5;
+  --cream: #f7f6f1;
+  --white: #fffefa;
+  --serif: "DM Sans", sans-serif;
+  --sans: "DM Sans", sans-serif;
+  --case-accent: #a75338;
+  --visual-accent: #315c4d;
+  --focus-ring: 0 0 0 3px #fffefa, 0 0 0 5px #315c4d;
+}
+
+body {
+  background: var(--color-background) !important;
+  color: var(--color-ink) !important;
+  font-family: "DM Sans", sans-serif !important;
+}
+
+body *,
+body *::before,
+body *::after {
+  font-family: "DM Sans", sans-serif !important;
+}
+
+body :is(h1, h2, h3, h4, h5, h6, .display) {
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+body :is(.site-header, header) {
+  background-color: rgb(247 246 241 / 94%);
+  border-color: var(--color-line);
+}

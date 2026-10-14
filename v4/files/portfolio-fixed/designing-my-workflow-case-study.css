@@ -1,0 +1,20 @@
+body {
+  --coral: #9A6548;
+  --sage: #5C7A72;
+  --case-accent: #9A6548;
+}
+
+.case-study-pager a:focus-visible {
+  outline-color: #9A6548;
+}
+
+@media (max-width: 560px) {
+  .diagram {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .d-step {
+    min-width: 0;
+  }
+}

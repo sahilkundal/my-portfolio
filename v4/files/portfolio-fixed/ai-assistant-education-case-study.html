@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Assistant for Education — Sahil Kundal</title>
+  <meta name="description" content="Samsung · Enterprise AI · 0→1 case study by Sahil Kundal, Senior UX Designer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="case-study.css">
+  <link rel="stylesheet" href="case-study-detail.css">
+    <link rel="stylesheet" href="ai-assistant-education-case-study.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="nav-mark" href="index.html" aria-label="Sahil Kundal, home"><span class="nav-mark-icon" aria-hidden="true">SK</span><span class="nav-wordmark">Sahil Kundal<small>Senior UX Designer</small></span></a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="work.html" aria-current="page">Work</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+<section class="view active" id="view-case-education">
+    <div class="case case-page">
+      <a class="back-link" href="work.html"><svg viewBox="0 0 14 14"><polyline points="6,1 1,7 6,13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>Back to work</a>
+
+      <div class="cp-kicker">Case study 01 · Enterprise · 0→1</div>
+      <h1 class="cp-title">AI Assistant for Education</h1>
+      <p class="cp-sub">Transforming interactive flat panel displays from underused hardware into a global, subscription-ready classroom AI ecosystem.</p>
+
+      <div class="cp-meta">
+        <div class="cp-meta-item"><div class="label">My Role</div><div class="value">Lead UX Designer — end-to-end</div></div>
+        <div class="cp-meta-item"><div class="label">Timeline</div><div class="value">Phase 2 &amp; 3 · ~1 year</div></div>
+        <div class="cp-meta-item"><div class="label">Team</div><div class="value">PMs, AI engineers, UI devs, sales</div></div>
+        <div class="cp-meta-item"><div class="label">Reach</div><div class="value">6 regions · 108+ languages</div></div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">01</div>
+        <h3>Overview &amp; business objective</h3>
+        <p>Samsung holds a major global share of the Interactive Flat Panel Display (IFPD) market for classrooms — but the software running on those screens was largely underused. The business objective was to shift the model from selling hardware once to a <strong>freemium-to-subscription enterprise SaaS</strong> business: a suite of AI-powered teaching tools bundled with the display, sold to schools as an ongoing product.</p>
+        <p>That suite became the <strong>Samsung AI Assistant for Education</strong>, and I joined at the start of Phase 2 — after an initial proof-of-concept with no real UX behind it — to take it from raw idea to an end-to-end product deployed in enterprise schools across the <strong>USA, Canada, UK, Europe, India, and South Korea</strong>.</p>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">02</div>
+        <h3>The problem space</h3>
+        <p>Even with a large touchscreen at the front of the room, classroom teaching was still fundamentally analog. Research and VOC feedback surfaced three concrete friction points:</p>
+        <div class="friction-grid cols-3">
+          <div class="friction-card"><div class="fc-num">01</div><h4>The USB bottleneck</h4><p>Teachers don't get a dedicated personal device per classroom. A lesson meant a personal laptop or flash drive — forget the drive, the lesson stalls.</p></div>
+          <div class="friction-card"><div class="fc-num">02</div><h4>Feature bloat from the POC</h4><p>Early AI features were buried in nested menus. A teacher can't break eye contact with 40 students to go hunting for a setting.</p></div>
+          <div class="friction-card"><div class="fc-num">03</div><h4>Passive engagement</h4><p>Students received information but had no real-time, interactive way to be assessed on it during the lesson itself.</p></div>
+        </div>
+        <p class="pull-quote">How do you design for a "dual-audience" screen — one person operating it up close, forty people reading it from the back of the room — without either one breaking the flow of teaching?</p>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">03</div>
+        <h3>The key decision: breaking one menu into two identities</h3>
+        <p>The Phase 1 POC treated every AI feature — Circle to Search, Live Transcript, AI Summary — as items in one flat menu. Based on VOC feedback, I concluded the problem wasn't the features, it was that they had no shared logic for <em>when</em> a teacher would reach for them.</p>
+        <p>I split the architecture into two distinct identities:</p>
+        <ul>
+          <li><strong>On-demand widgets</strong> — Circle to Search, Live Caption, and Record Lesson live as floating, always-available actions a teacher can trigger over <em>any</em> content, mid-lesson, without navigating away from what they're teaching.</li>
+          <li><strong>The "My App" hub</strong> — a dashboard organized by class and subject, where each lesson holds its recording, AI transcript, and generated artifacts (summaries, quizzes, and future flashcards/video summaries/games) for teachers to review and share.</li>
+        </ul>
+        <p>This mirrors a distinction I'd apply to any interface: actions you take <em>in the moment</em> should never live in the same place as content you manage <em>after the moment</em> — collapsing them into one menu was what made the POC feel bloated in the first place.</p>
+        <div class="compare">
+          <div class="compare-panel before"><div class="cp-tag">Phase 1 · One flat menu</div><ul><li>Circle to Search</li><li>Live Transcript</li><li>AI Summary</li></ul></div>
+          <div class="compare-arrow">→</div>
+          <div class="compare-panel after"><div class="cp-tag">Phase 2+ · Two identities</div><ul><li><strong>Widgets</strong> — Circle to Search, Live Caption, Record Lesson</li><li><strong>My App</strong> — class/subject hub with transcripts, summaries, quizzes</li></ul></div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">04</div>
+        <h3>Solving the hardware problem: AMS &amp; cloud binding</h3>
+        <p>To remove the USB bottleneck, I led the UX for an <strong>Account Management System (AMS)</strong>: a teacher walks up to any Samsung display in the building, signs in with a simple PIN, and their entire teaching environment — profile, preferences, in-progress session — resumes on that screen.</p>
+        <p>Paired with AMS, I designed a <strong>cloud &amp; drive-binding</strong> flow so teachers can link Google Drive, local storage, or other connected drives directly inside the app — teaching material lives in the cloud, not on a device that can be forgotten at home.</p>
+        <div class="callout"><strong>Why this mattered:</strong> the whole "leave your laptop at home" value proposition only holds if identity works at the ecosystem level, not the device level — this decision underpins almost every other feature in the product.</div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">05</div>
+        <h3>Designing for AI trust &amp; active engagement</h3>
+        <p>The assistant runs on Google's Gemini LLM with personalized prompts tuned for classroom use — but introducing AI into K-12 classrooms demands real guardrails, not just capability.</p>
+        <div class="insight-grid">
+          <div class="insight-card"><div class="ic-num">GUARDRAIL 01</div><h4>Teacher-controlled review gates</h4><p>Every AI-generated summary or quiz is reviewed by the teacher before it reaches a single student — never auto-broadcast.</p></div>
+          <div class="insight-card"><div class="ic-num">GUARDRAIL 02</div><h4>Live AI quizzes</h4><p>AI generates a contextual quiz from the live transcript; the teacher shows a QR code on the IFPD, students answer in real time on their own device.</p></div>
+          <div class="insight-card"><div class="ic-num">GUARDRAIL 03</div><h4>Distance-readable UI</h4><p>Text, contrast, and component sizing tuned so a student in the back row can read prompts and alerts at a glance.</p></div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">06</div>
+        <h3>The localization challenge</h3>
+        <p>Deploying across six regions meant supporting <strong>108+ languages</strong> — and localization here wasn't a translation task, it was a core UX constraint. The system language a teacher navigates in often needed to differ from the language they were actively teaching in (a Spanish-speaking teacher running an English lesson, for example).</p>
+        <p>Rather than exposing that complexity as another settings menu, I separated <strong>system language</strong> from <strong>input/teaching language</strong> as two independent controls. I also authored a full <strong>UX glossary</strong> — every interface string and error message, rewritten for clarity — handed to translation teams so that, for instance, a string translated into German wouldn't break a layout meant to be read from twenty feet away.</p>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">07</div>
+        <h3>Ecosystem breadth &amp; future roadmap</h3>
+        <p>The product isn't one app — it's an ecosystem, each surface built for a different person in the school:</p>
+        <div class="friction-grid">
+          <div class="friction-card"><div class="fc-num">IFPD</div><h4>IFPD app</h4><p>The in-classroom experience — widgets, live captioning, quizzes.</p></div>
+          <div class="friction-card"><div class="fc-num">Teacher</div><h4>Teacher app</h4><p>Manage content and study material outside class, on any device.</p></div>
+          <div class="friction-card"><div class="fc-num">Admin</div><h4>Admin app</h4><p>Device, user, NFC, subscription and credit management at the school level.</p></div>
+          <div class="friction-card"><div class="fc-num">Student</div><h4>Student app (POC)</h4><p>Future roadmap — the closed personalized-learning loop below.</p></div>
+        </div>
+        <p>The student experience closes the loop: students access shared lessons and summaries, take the live quiz, and — based on where they got questions wrong — the system is designed to generate personalized study material, flashcards, and AI podcasts targeting exactly what they're missing.</p>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">08</div>
+        <h3>Impact</h3>
+        <div class="stat-row">
+          <div class="stat-box"><div class="stat-val">6</div><div class="stat-label">regions deployed — USA, Canada, UK, Europe, India, South Korea</div></div>
+          <div class="stat-box"><div class="stat-val">108+</div><div class="stat-label">languages supported</div></div>
+          <div class="stat-box"><div class="stat-val">3</div><div class="stat-label">connected apps — teacher, admin, IFPD (+ student POC)</div></div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">09</div>
+        <h3>Takeaway</h3>
+        <p>The most advanced AI model is useless if the interface adds friction for the person using it. Reducing hardware dependence, surfacing tools as in-the-moment widgets instead of buried menu items, and treating localization as a UX problem rather than a translation task — that's what turned a rough proof-of-concept into an enterprise-ready product shipping globally.</p>
+      </div>
+
+      <div class="cp-nav-footer">
+        <a class="back-link" href="work.html" style="margin-bottom:0;"><svg viewBox="0 0 14 14"><polyline points="6,1 1,7 6,13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>All case studies</a>
+      </div>
+      <nav class="case-study-pager" aria-label="Move between case studies">
+        <a href="field-management-system-case-study.html"><span>← Previous case study</span><strong>Field Management System</strong></a>
+        <a href="agentic-customer-support-case-study.html"><span>Next case study →</span><strong>Next-Gen Agentic Customer Support</strong></a>
+      </nav>
+    </div>
+  </section>
+  </main>
+  <footer class="site-footer container"><span>© 2026 Sahil Kundal</span><a href="contact.html">Say hello <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

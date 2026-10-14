@@ -1,0 +1,17 @@
+body {
+  --bg: var(--color-background);
+  --panel: var(--color-surface);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --line: var(--color-line);
+  --coral: var(--color-accent);
+  --sage: var(--color-sage);
+  --case-accent: var(--color-accent);
+  --visual-accent: var(--color-sage);
+}
+
+.hero-visual {
+  background-image:
+    radial-gradient(circle at 82% 18%, rgb(49 92 77 / 13%) 0 16%, transparent 16.5%),
+    linear-gradient(135deg, #edf2ed, var(--panel));
+}

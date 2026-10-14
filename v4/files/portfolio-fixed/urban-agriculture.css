@@ -1,0 +1,10 @@
+body {
+  --bg: var(--color-background);
+  --panel: var(--color-surface);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --line: var(--color-line);
+  --coral: var(--color-accent);
+  --sage: var(--color-sage);
+  --case-accent: var(--color-sage);
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Partner Service Portal — Role-Based Access for External Teams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="site.css" rel="stylesheet"/>
+<link href="case-study.css" rel="stylesheet"/>
+<link href="partner-portal-case-study.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="portfolio-theme.css" rel="stylesheet">
+</head>
+<body>
+<div class="decorative-corner top-left" aria-hidden="true"></div>
+<div class="decorative-corner bottom-right" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="nav-mark" href="index.html" aria-label="Sahil Kundal, home"><span class="nav-mark-icon" aria-hidden="true">SK</span><span class="nav-wordmark">Sahil Kundal<small>Senior UX Designer</small></span></a>
+    <nav class="links" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="work.html" aria-current="location">Work</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+<div class="topbar"><a class="back" href="work.html">← All work</a><span>Partner Service Portal / end-to-end case study</span></div>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Enterprise UX · Partner Platforms · Role-Based Access</div>
+      <h1>A role-based portal for external service partners</h1>
+      <p class="dek">Creating a portal that gives external service partners just enough control to do their jobs effectively while protecting internal operational consistency and limiting unnecessary complexity exposure.</p>
+      <div class="meta">
+        <div><b>Role</b>Product / UX Designer</div>
+        <div><b>Project</b>Partner Service Portal</div>
+        <div><b>Scope</b>Responsive web application for external service partners</div>
+        <div><b>Research</b>Partner interviews · Internal stakeholder workshops · Service obligation analysis</div>
+      </div>
+    </div>
+    <div class="hero-visual" role="img" aria-label="Illustrative partner access workflow map, not a product screenshot">
+      <span class="visual-caption">ILLUSTRATIVE · NOT A PRODUCT SCREEN</span>
+      <div class="visual-flow"><span>Partner</span><span>Role</span><span>Permitted action</span></div>
+      <p>The right people.<br>The right access.<br>A shared service standard.</p>
+    </div>
+  </div>
+  <div class="note"><b>Project context:</b> Role-based portal for external service partners to accept work, manage service obligations and stay compatible with internal operations model.</div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">01 · Context</div></div>
+    <div class="body">
+      <h2>Extend the service operation beyond the company boundary</h2>
+      <p>The <strong>Partner portal</strong> archive contains early paper sketches, partner/brand references, service-category imagery and Onsitego sign-in/context assets. I read this as a workspace for external service partners who need controlled access to jobs, devices and commercial/service information without exposing the entire internal operations system.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">02 · Product tension</div></div>
+    <div class="body">
+      <h2>Give partners enough control without giving them internal-system complexity</h2>
+      <div class="cards">
+        <article class="card"><span class="n">NEED 01</span><h4>Know what to do next</h4><p>See assigned jobs, required evidence, due dates and service expectations.</p></article>
+        <article class="card"><span class="n">NEED 02</span><h4>Protect consistency</h4><p>Ensure external teams follow the same service states and proof standards as internal teams.</p></article>
+        <article class="card"><span class="n">NEED 03</span><h4>Limit complexity</h4><p>Expose only the data and actions a partner is authorized to see.</p></article>
+      </div>
+      <div class="flow">
+        <div class="step"><span>01</span><b>NEW</b>Accept / decline within SLA</div>
+        <div class="step"><span>02</span><b>SCHEDULED</b>Prepare engineer + part</div>
+        <div class="step"><span>03</span><b>IN SERVICE</b>Capture proof + outcome</div>
+        <div class="step"><span>04</span><b>CLOSED</b>Invoice / payout / audit trail</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">03 · Decision 1</div></div>
+    <div class="body">
+      <h2>Make the dashboard a work queue, not a reporting homepage</h2>
+      <p>For external partners, “dashboard” should mean <strong>today’s obligations</strong>: jobs awaiting acceptance, appointments due, evidence rejected, invoices/payouts needing action and jobs blocked by customer or part availability. Reporting remains secondary.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">04 · Decision 2</div></div>
+    <div class="body">
+      <h2>Progressive disclosure by partner role</h2>
+      <p>A service-center owner, coordinator and field technician do not need the same portal. Role-based navigation reduces training burden and protects sensitive commercial information. The owner sees performance and payouts; the coordinator sees job queues and staffing; the technician sees only assigned work and evidence requirements.</p>
+      <div class="caption">Access narrows from left to right — each role sees only what its job requires.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">05 · Decision 3</div></div>
+    <div class="body">
+      <h2>Use a shared service vocabulary across internal and external tools</h2>
+      <p>The highest-risk failure is terminology drift: an internal system says “assigned,” a partner calls it “accepted,” and finance sees “open.” I would normalize the lifecycle into a shared state model and reuse the same status language, timestamps and exception reasons across the partner portal and internal operations system.</p>
+      <div class="quote">"The portal should inherit core tables, status chips, filters and service-detail patterns from the internal system while applying a thinner role-appropriate shell."<small>Design system implication</small></div>
+      <p>This creates consistency without cloning internal complexity.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">06 · Illustrative impact</div></div>
+    <div class="body">
+      <h2>Measurable improvements in partner operations</h2>
+      <div class="stats">
+        <div class="stat"><div class="v">~30%</div><div class="l">fewer coordinator calls asking partners for job status</div></div>
+        <div class="stat"><div class="v">~20%</div><div class="l">faster partner job acceptance / scheduling</div></div>
+        <div class="stat"><div class="v">1 model</div><div class="l">shared service states across partner and internal operations</div></div>
+      </div>
+      <div class="stat-bars">
+        <div class="bar-row"><span class="bl">Coordinator status-check calls</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div><span class="bv">−30%</span></div>
+        <div class="bar-row"><span class="bl">Time to accept / schedule a job</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><span class="bv">−20%</span></div>
+      </div>
+      <div class="caption">Illustrative metrics for storytelling; replace with actual partner SLA, call-volume or turnaround data.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">07 · Reflection</div></div>
+    <div class="body">
+      <h2>Operational compatibility with much lower cognitive load</h2>
+      <p>A partner portal succeeds when it feels simpler than the internal product while still producing data the internal product can trust. The design goal is not feature parity; it is <strong>operational compatibility with much lower cognitive load</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">Process</div></div>
+    <div class="body">
+      <h2>Compatible with internal ops, simpler than internal ops</h2>
+      <div class="process-grid">
+        <div class="process-card"><div class="process-index">01</div><h4>Discover</h4><p>Read partner-facing assets and sign-in context to understand what an external team actually needs day to day.</p></div>
+        <div class="process-card"><div class="process-index">02</div><h4>Define</h4><p>Frame the dashboard as a work queue of today's obligations, not a reporting homepage.</p></div>
+        <div class="process-card"><div class="process-index">03</div><h4>Design</h4><p>Normalize the lifecycle into a shared state model reused across partner and internal tools.</p></div>
+      </div>
+      <div class="outcome-box"><strong>Outcome</strong><p>Operational compatibility with internal systems, at a fraction of the cognitive load.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="case-study-nav">
+    <a href="work.html">← All case studies</a>
+    <div class="case-study-links">
+      <span class="figma-link figma-protected">Source research is not publicly available.</span>
+    </div>
+    <div class="case-study-info">
+      <span class="case-number">10</span>
+      <span class="case-divider">/</span>
+      <span class="case-total">10</span>
+    </div>
+  </div>
+  <nav class="case-study-pager" aria-label="Move between case studies">
+    <a href="inventory-management-case-study.html"><span>← Previous case study</span><strong>Inventory Management</strong></a>
+    <a href="designing-my-workflow-case-study.html"><span>Next case study →</span><strong>Designing my own workflow</strong></a>
+  </nav>
+</section>
+</div>
+</body>
+</html>

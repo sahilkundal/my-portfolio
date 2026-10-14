@@ -1,0 +1,48 @@
+.skills-page {
+  padding-block: clamp(4.5rem, 10vw, 8rem);
+}
+
+.skills-page > .eyebrow {
+  margin-bottom: 1.25rem;
+}
+
+.skills-page > h1 {
+  max-width: 17ch;
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 1;
+}
+
+.skills-intro {
+  max-width: 66ch;
+  margin-bottom: 3rem;
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}
+
+.skills-page .capability-grid {
+  margin-bottom: 1.75rem;
+}
+
+.skills-page .capability {
+  min-height: 350px;
+}
+
+.capability-index {
+  color: var(--color-accent);
+  font: 600 0.85rem/1 var(--font-display);
+}
+
+.skills-page .capability p {
+  color: var(--color-muted);
+}
+
+.skills-page .capability ul {
+  margin-top: 1rem;
+}
+
+@media (max-width: 760px) {
+  .skills-page .capability {
+    min-height: auto;
+  }
+}

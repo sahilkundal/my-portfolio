@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory Management for Service Operations — Sahil Kundal</title>
+<meta name="description" content="Connecting spare-part availability, repair estimates and visit outcomes so inventory follows the service job instead of living in a separate operational silo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDEEE9; --panel:#F6F6F2; --ink:#1A1F27; --soft:#565D68;
+  --line:#C9CCC5; --coral:#E8542E; --sage:#5C7A72; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;line-height:1.65}
+h1,h2,h3,h4,.display{font-family:'Space Grotesk',sans-serif;letter-spacing:-.015em;line-height:1.08}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 48px}
+.case{max-width:900px;margin:0 auto;padding:64px 48px 120px}
+header{position:sticky;top:0;z-index:30;background:rgba(237,238,233,.9);backdrop-filter:blur(7px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:0 auto;padding:18px 48px;display:flex;justify-content:space-between;align-items:center}
+.brand{font:600 17px 'Space Grotesk',sans-serif;text-decoration:none}.brand b{color:var(--coral)}
+.nav a{font-size:14px;text-decoration:none;color:var(--soft)}
+.back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--soft);font-size:14px;margin-bottom:40px}
+.back:hover{color:var(--coral)}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sage)}
+h1{font-size:clamp(38px,6vw,66px);max-width:15ch;margin-top:14px}
+.lede{font-size:20px;color:var(--soft);max-width:60ch;margin-top:20px}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meta .label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
+.meta .value{font-size:15px;font-weight:500;margin-top:5px}
+.hero-media{margin:42px 0 0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
+.hero-media img{width:100%;display:block}
+.assumption{margin-top:14px;font-size:12.5px;color:var(--soft)}
+.section{margin-top:72px}
+.num{font:600 13px 'Space Grotesk',sans-serif;color:var(--coral)}
+.section h2{font-size:clamp(26px,3.5vw,38px);margin:10px 0 20px}
+.section h3{font-size:20px;margin:28px 0 10px}
+.section p{font-size:16.5px;color:var(--soft);margin-bottom:16px;max-width:70ch}
+.section strong{color:var(--ink)}
+.quote{border-left:3px solid var(--coral);padding-left:22px;margin:28px 0;font:500 21px/1.35 'Space Grotesk',sans-serif;max-width:62ch}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.card{background:var(--panel);border:1px solid var(--line);padding:20px}
+.card .eyebrow{font-size:11px;color:var(--coral);font-weight:600;letter-spacing:.05em}
+.card h3{font-size:16px;margin:8px 0 7px}.card p{font-size:13.5px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.stat{background:var(--panel);border:1px solid var(--line);padding:22px}
+.stat .v{font:600 30px 'Space Grotesk',sans-serif;color:var(--coral)}
+.stat .l{font-size:13px;color:var(--soft);margin-top:4px}
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
+figure{border:1px solid var(--line);background:var(--panel);overflow:hidden}
+figure img{width:100%;display:block} figcaption{border-top:1px solid var(--line);padding:10px 12px;font-size:12px;color:var(--soft)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
+.flow div{border:1px solid var(--line);background:var(--panel);padding:14px;font-size:13px}
+.flow b{display:block;color:var(--coral);font-size:11px;margin-bottom:4px}
+.decision{margin:28px 0;padding:24px;border:1px solid var(--line);background:var(--panel)}
+.decision .dlabel{font-size:11px;color:var(--sage);font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+.decision h3{margin:8px 0 10px}.decision p:last-child{margin-bottom:0}
+.note{font-size:13px;color:var(--soft);font-style:italic}
+.next{margin-top:82px;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.btn{display:inline-flex;padding:12px 18px;border:1px solid var(--ink);text-decoration:none;font-size:14px}
+.btn:hover{background:var(--ink);color:var(--bg)}
+footer{padding:28px 48px 48px;max-width:1180px;margin:0 auto;color:var(--soft);font-size:13px}
+@media(max-width:760px){
+ .wrap,.case,.nav{padding-left:24px;padding-right:24px}
+ .meta{grid-template-columns:1fr 1fr}.grid3,.stats,.media-grid,.flow,.process-grid{grid-template-columns:1fr}
+}
+.ux-process{margin-top:2rem}
+.process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.process-card{border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--panel)}
+.process-index{font:600 12px/1 'Space Grotesk',sans-serif;color:var(--coral);margin-bottom:18px}
+.process-card h4{margin:0 0 8px;font-size:17px}
+.process-card p{margin:0;color:var(--soft);font-size:14px;line-height:1.65}
+.outcome-box{margin-top:18px;padding:22px;border-left:3px solid var(--coral);background:var(--panel)}
+.outcome-box strong{display:block;margin-bottom:6px}
+.outcome-box p{margin:0;line-height:1.7;color:var(--soft)}
+.stat-bars{margin:24px 0;display:flex;flex-direction:column;gap:12px}
+.bar-row{display:grid;grid-template-columns:220px 1fr 50px;gap:12px;align-items:center;font-size:13px}
+.bar-track{height:9px;border-radius:999px;background:#e2e4dc;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px;background:var(--coral)}
+@media(max-width:760px){.bar-row{grid-template-columns:1fr}}
+img,svg{max-width:100%}
+
+/* VISUAL ENHANCEMENTS */
+/* 1. Enhanced background patterns and gradients */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(232, 84, 46, 0.03) 0%, transparent 20%),
+              radial-gradient(circle at 80% 20%, rgba(92, 122, 114, 0.03) 0%, transparent 20%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.section:nth-child(even)::before {
+  background: radial-gradient(circle at 30% 70%, rgba(92, 122, 114, 0.02) 0%, transparent 20%),
+              radial-gradient(circle at 70% 30%, rgba(232, 84, 46, 0.02) 0%, transparent 20%);
+}
+
+/* 2. Enhanced card hover states with depth */
+.card, .insight-card, .stat, .process-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover, .insight-card:hover, .stat:hover, .process-card:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--coral);
+}
+
+/* 3. Improved section dividers */
+.section h2 {
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--coral);
+  border-radius: 2px;
+}
+
+/* 4. Enhanced typographic hierarchy */
+h1, .display {
+  background: linear-gradient(to right, var(--coral), var(--sage));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 5. Visual case study links enhancement */
+.next {
+  position: relative;
+  overflow: visible;
+}
+
+.next::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--coral), transparent);
+}
+
+.back, .btn {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.back:hover, .btn:hover {
+  transform: translateY(-2px);
+}
+
+.back::after, .btn::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--coral);
+  transition: width 0.3s ease;
+}
+
+.back:hover::after, .btn:hover::after {
+  width: 40px;
+}
+
+/* 6. Case study progress indicators */
+.case-study-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.case-study-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.case-number {
+  font: 600 18px 'Space Grotesk', sans-serif;
+  color: var(--coral);
+  min-width: 28px;
+  text-align: center;
+}
+
+.case-divider {
+  color: var(--line);
+  font-size: 18px;
+}
+
+.case-total {
+  color: var(--ink-soft);
+  font-size: 18px;
+}
+
+/* 7. Enhanced visual elements for stats and metrics */
+.stat-box, .confidence-card, .process-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.stat-box::before, .confidence-card::before, .process-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--coral);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-box:hover::before, .confidence-card:hover::before, .process-card:hover::before {
+  opacity: 1;
+}
+
+/* 8. Subtle animations for interactive elements */
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.btn {
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+/* 9. Enhanced focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+}
+
+/* 10. Decorative corner elements */
+.decorative-corner {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.decorative-corner.top-left {
+  top: -20px;
+  left: -20px;
+  background: radial-gradient(circle, var(--coral) 0%, transparent 70%);
+  transform: rotate(45deg);
+}
+
+.decorative-corner.bottom-right {
+  bottom: -20px;
+  right: -20px;
+  background: radial-gradient(circle, var(--sage) 0%, transparent 70%);
+  transform: rotate(-45deg);
+}
+</style>
+</head>
+<body>
+<div class="decorative-corner top-left" aria-hidden="true"></div>
+<div class="decorative-corner bottom-right" aria-hidden="true"></div>
+<header><div class="nav"><a class="brand" href="index.html">SK<b>.</b>UX</a><a href="index.html#/work">All work</a></div></header>
+<main class="case">
+<a class="back" href="index.html#/work">← Back to work</a>
+<div class="kicker">Case study · Enterprise workflow · Onsitego</div>
+<h1>Inventory Management for Service Operations</h1>
+<p class="lede">Connecting spare-part availability, repair estimates and visit outcomes so inventory follows the service job instead of living in a separate operational silo.</p>
+<div class="meta"><div><div class="label">My Role</div><div class="value">Product / UX Designer</div></div><div><div class="label">Users</div><div class="value">Ops + service centers</div></div><div><div class="label">Timeline</div><div class="value">Assumed 8–12 weeks</div></div><div><div class="label">Surface</div><div class="value">Desktop web</div></div></div>
+
+<p class="assumption">Because of company policy and NDA constraints, some end-to-end screens and analytics cannot be shown. The case study focuses on the problem, research, design decisions, and selected interface glimpses.</p>
+
+<section class="section">
+<div class="num">01</div><h2>Context: inventory is not a warehouse problem when it blocks a repair</h2>
+<p>The <strong>Inventory management</strong> project combines hand-drawn flows with detailed Onsitego service screens containing repair estimates, visit outcomes, service-center assignment and ticket history. That makes inventory part of a broader repair workflow: spare parts, estimates and service outcomes have to stay synchronized with the customer’s job.</p>
+
+</section>
+
+<section class="section">
+<div class="num">02</div><h2>The failure mode: parts data and repair decisions drift apart</h2>
+<div class="grid3">
+  <div class="card"><div class="eyebrow">FRICTION 01</div><h3>Wrong part, right ticket</h3><p>A technician can know what the customer needs while the system still lacks a reliable part mapping.</p></div>
+  <div class="card"><div class="eyebrow">FRICTION 02</div><h3>Stock is visible too late</h3><p>Availability discovered after a visit causes another appointment, another call and another SLA risk.</p></div>
+  <div class="card"><div class="eyebrow">FRICTION 03</div><h3>Estimate ≠ inventory</h3><p>Repair cost, part approval and stock reservation can become three disconnected decisions.</p></div>
+</div>
+<p class="quote">The product should treat a spare part as a stateful object in the repair journey—not as a SKU living in a separate inventory module.</p>
+</section>
+
+<section class="section">
+<div class="num">03</div><h2>Decision 1 — connect diagnosis, estimate and stock in one decision surface</h2>
+
+<p>When an operator selects a diagnosis or repair outcome, the system should immediately surface the compatible part, its location, available quantity, expected replenishment and whether customer approval is required. This prevents the common “approve now, discover stock later” loop.</p>
+</section>
+
+<section class="section">
+<div class="num">04</div><h2>Decision 2 — model inventory around states that operations can act on</h2>
+<div class="flow">
+  <div><b>REQUESTED</b>Part need identified</div>
+  <div><b>RESERVED</b>Stock committed to a job</div>
+  <div><b>IN TRANSIT</b>Moving to service center / engineer</div>
+  <div><b>CONSUMED / RETURNED</b>Closed with traceability</div>
+</div>
+<p>Stock count alone is not enough. The interface needs to distinguish <strong>available, reserved, in-transit, consumed, defective and return-pending</strong>. Those states are what stop double allocation and make reconciliation possible.</p>
+</section>
+
+<section class="section">
+<div class="num">05</div><h2>Decision 3 — make visit outcome the bridge between service and inventory</h2>
+
+<p>The visit-outcome screen is the natural moment to update inventory automatically. If a part was used, the job should consume the reservation; if diagnosis changed, the reservation should be released; if a replacement is pending, the next action should be created without requiring a second system.</p>
+<div class="decision"><div class="dlabel">System rule</div><h3>One user action, multiple synchronized records</h3><p>Submitting a service outcome should update the ticket, part state and follow-up task together. This removes reconciliation work from the operator and reduces “system says one thing, reality says another” failures.</p></div>
+</section>
+
+<section class="section">
+<div class="num">06</div><h2>Illustrative impact</h2>
+<div class="stats">
+  <div class="stat"><div class="v">~25%</div><div class="l">fewer repeat visits caused by part-availability surprises</div></div>
+  <div class="stat"><div class="v">~40%</div><div class="l">less manual reconciliation between ticket and stock records</div></div>
+  <div class="stat"><div class="v">100%</div><div class="l">part movement tied to a service-job state in the target model</div></div>
+</div>
+<div class="stat-bars">
+  <div class="bar-row"><span>Repeat visits from stock surprises</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><span>−25%</span></div>
+  <div class="bar-row"><span>Manual ticket ↔ stock reconciliation</span><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><span>−40%</span></div>
+  <div class="bar-row"><span>Part movement tied to job state</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span>100%</span></div>
+</div>
+<p class="note">Illustrative case-study metrics, not analytics contained in the project materials.</p>
+</section>
+
+<section class="section">
+<div class="num">07</div><h2>Reflection</h2>
+<p>The strongest design insight is that enterprise modules should follow the business event, not the org chart. A customer repair can cross operations, inventory, finance and field service, but the user should experience <strong>one continuous job</strong>.</p>
+</section>
+
+<div class="section ux-process">
+<div class="num">Process</div><h2>From disconnected modules to one continuous job</h2>
+<div class="process-grid">
+  <div class="process-card"><div class="process-index">01</div><h4>Discover</h4><p>Trace where part data and repair decisions drift apart across diagnosis, estimate and stock.</p></div>
+  <div class="process-card"><div class="process-index">02</div><h4>Define</h4><p>Model inventory as a stateful object in the repair journey, not a SKU in a separate module.</p></div>
+  <div class="process-card"><div class="process-index">03</div><h4>Design</h4><p>Make visit outcome the single action that updates ticket, part state and follow-up task together.</p></div>
+</div>
+<div class="outcome-box"><strong>Outcome</strong><p>Enterprise modules that follow the business event, not the org chart — so the user experiences one continuous repair job.</p></div>
+</div>
+
+<div class="case-study-nav">
+  <a class="back" href="index.html#/work">← All case studies</a>
+  <div class="case-study-info">
+    <span class="case-number">09</span>
+    <span class="case-divider">/</span>
+    <span class="case-total">10</span>
+  </div>
+  <a class="btn" href="partner-portal-case-study.html">Next: Partner Portal →</a>
+</div>
+</main>
+<footer>© 2026 Sahil Kundal · <a href="https://github.com/sahilkundal/my-portfolio" target="_blank" rel="noopener">GitHub</a> · Case study product design case study</footer>
+</body>
+</html>

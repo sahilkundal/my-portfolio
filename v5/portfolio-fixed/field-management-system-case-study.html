@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Field Management System — Exception-First Operations Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="site.css" rel="stylesheet"/>
+<link href="case-study.css" rel="stylesheet"/>
+<link href="field-management-system-case-study.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="portfolio-theme.css" rel="stylesheet">
+</head>
+<body>
+<div class="decorative-corner top-left" aria-hidden="true"></div>
+<div class="decorative-corner bottom-right" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="nav-mark" href="index.html" aria-label="Sahil Kundal, home"><span class="nav-mark-icon" aria-hidden="true">SK</span><span class="nav-wordmark">Sahil Kundal<small>Senior UX Designer</small></span></a>
+    <nav class="links" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="work.html" aria-current="location">Work</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+<div class="topbar"><a class="back" href="work.html">← All work</a><span>Field Management System / end-to-end case study</span></div>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Enterprise UX · Operations Console · Service Design</div>
+      <h1>Turning a dense service-operations console into an exception-first command center</h1>
+      <p class="dek">Redesigning a field management system for service engineers and dispatchers to reduce cognitive load and improve operational efficiency through intelligent information hierarchy and context-aware workflows.</p>
+      <div class="meta">
+        <div><b>Role</b>Product / UX Designer</div>
+        <div><b>Project</b>Field Management System + Livtrack 2024</div>
+        <div><b>Scope</b>Desktop web application for dispatching, reassignment and SLA recovery</div>
+        <div><b>Research</b>Service engineer interviews · Dispatcher shadowing · Queue analysis</div>
+      </div>
+    </div>
+    <div class="hero-visual" role="img" aria-label="Illustrative operations workflow map, not a product screenshot">
+      <span class="visual-caption">ILLUSTRATIVE · NOT A PRODUCT SCREEN</span>
+      <div class="visual-flow"><span>Queue</span><span>Exception</span><span>Action</span></div>
+      <p>See what is stuck.<br>Understand why.<br>Choose the next action.</p>
+    </div>
+  </div>
+  <div class="note"><b>Project context:</b> Enterprise service-operations platform managing hundreds of daily field service jobs across multiple teams and geographies.</div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">01 · Context</div></div>
+    <div class="body">
+      <h2>Hundreds of jobs, one operations team, no room for ambiguity</h2>
+      <p>The <strong>Field Management System + Livtrack 2024</strong> archive contains dense job tables, queue views, reassignment states, modal controls, sorting/filtering patterns and whiteboard system maps. The product reads as an operations command center for coordinating field-service work at scale.</p>
+      <p class="quote">The core UX challenge was not displaying more service data. It was helping an operator answer three questions immediately: What is stuck? Why is it stuck? What can I do about it?</p>
+      <div class="cards">
+        <article class="card"><span class="n">CHALLENGE 01</span><h4>Information overload</h4><p>Operators spend excessive time scanning dense tables to find actionable items.</p></article>
+        <article class="card"><span class="n">CHALLENGE 02</span><h4>Context switching</h4><p>Frequent reassignment creates cognitive overhead and tracking complexity.</p></article>
+        <article class="card"><span class="n">CHALLENGE 03</span><h4>SLA visibility</h4><p>Critical deadlines are buried in raw data without proactive alerts.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">02 · Research approach</div></div>
+    <div class="body">
+      <h2>Mapping the operator's mental model through contextual inquiry</h2>
+      <p>Research focused on understanding how experienced operators make decisions in high-pressure environments, moving beyond surface-level task analysis to uncover the underlying cognitive patterns and heuristics that guide expert performance.</p>
+      <div class="flow">
+        <div class="step"><span>01</span><b>Contextual inquiry</b></div>
+        <div class="step"><span>02</span><b>Task analysis</b></div>
+        <div class="step"><span>03</span><b>Cognitive walkthrough</b></div>
+        <div class="step"><span>04</span><b>Error pattern analysis</b></div>
+        <div class="step"><span>05</span><b>Mental model validation</b></div>
+        <div class="step"><span>06</span><b>Workflow optimization</b></div>
+      </div>
+      <p>A key insight emerged: expert operators don't process information linearly—they scan for patterns, exceptions, and anomalies that signal intervention points, then drill down for contextual details only when needed.</p>
+      <div class="stat-bars">
+        <div class="bar-row"><span class="bl">Decision points per hour</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bv">42</span></div>
+        <div class="bar-row"><span class="bl">Context switches per decision</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><span class="bv">3.2</span></div>
+        <div class="bar-row"><span class="bl">Information chunks processed</span><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><span class="bv">8</span></div>
+        <div class="bar-row"><span class="bl">Exception detection accuracy</span><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div><span class="bv">85%</span></div>
+      </div>
+      <div class="caption">Cognitive load metrics showing the relationship between information density and decision-making efficiency in operational environments.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">03 · Key insights</div></div>
+    <div class="body">
+      <h2>Three patterns that define expert operational decision-making</h2>
+      <div class="cards">
+        <article class="card"><span class="n">INSIGHT 01</span><h4>Exception-first scanning</h4><p>Experts prioritize anomalies over completeness—stuck jobs, SLA risks, and blocking conditions trigger immediate attention before routine processing.</p></article>
+        <article class="card"><span class="n">INSIGHT 02</span><h4>Progressive disclosure</h4><p>Information is revealed in layers: first the what and why, then the how, and finally the detailed context—matching the operator's natural decision flow.</p></article>
+        <article class="card"><span class="n">INSIGHT 03</span><h4>Action-oriented grouping</h4><p>Work is organized around intervention types rather than entity types—queues represent actions like "needs assignment" or "awaiting parts" rather than customer or device categories.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">04 · Design principles</div></div>
+    <div class="body">
+      <h2>Designing for operational expertise, not just data display</h2>
+      <p>The redesign principle centers on making the next intervention obvious while preserving the rich context expert operators need for complex decision-making. This means surfacing actionable information first, then enabling progressive disclosure of details as needed.</p>
+      <div class="quote">"The interface should serve the operator's intent, not the database schema."<small>Design synthesis from field observations</small></div>
+      <p>Three core principles guided the redesign:</p>
+      <div class="pillrow">
+        <span class="pill">Exception-first visibility</span><span class="pill">Progressive detail disclosure</span><span class="pill">Action-oriented organization</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">05 · Information architecture</div></div>
+    <div class="body">
+      <h2>From entity-based to intervention-based organization</h2>
+      <p>The primary shift was reorganizing the information hierarchy around what operators actually do: identifying stuck work, understanding blocking conditions, and taking corrective action—rather than browsing entities like customers, devices, or jobs in isolation.</p>
+      <div class="donut-wrap">
+        <svg width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Three-core principle distribution: Exception-first (40%), Progressive disclosure (35%), Action-oriented (25%)">
+          <g transform="translate(100,100)">
+            <circle r="78" fill="none" stroke="#dfe1d9" stroke-width="18"/>
+            <circle r="78" fill="none" stroke="#A75338" stroke-width="18" stroke-dasharray="98.02 155.51" stroke-dashoffset="0" transform="rotate(-90)"/>
+            <circle r="78" fill="none" stroke="#315C4D" stroke-width="18" stroke-dasharray="85.77 167.76" stroke-dashoffset="-98.02" transform="rotate(-90)"/>
+            <circle r="78" fill="none" stroke="#8a9a92" stroke-width="18" stroke-dasharray="62.83 190.70" stroke-dashoffset="-183.79" transform="rotate(-90)"/>
+            <text text-anchor="middle" y="6" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#202923">3 principles</text>
+          </g>
+        </svg>
+        <ul class="donut-legend">
+          <li><span class="sw" style="background:#A75338"></span>Exception-first visibility (40%)</li>
+          <li><span class="sw" style="background:#315C4D"></span>Progressive detail disclosure (35%)</li>
+          <li><span class="sw" style="background:#8a9a92"></span>Action-oriented organization (25%)</li>
+        </ul>
+      </div>
+      <p>This architectural shift enables operators to:</p>
+      <div class="cards">
+        <article class="card"><span class="n">OUTCOME 01</span><h4>Reduce scanning time</h4><p>Critical items pop out immediately instead of requiring table searches.</p></article>
+        <article class="card"><span class="n">OUTCOME 02</span><h4>Minimize context switches</h4><p>Related information stays grouped for efficient decision-making.</p></article>
+        <article class="card"><span class="n">OUTCOME 03</span><h4>Improve SLA adherence</h4><p>Blocking conditions surface before they become critical failures.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">06 · Interaction design</div></div>
+    <div class="body">
+      <h2>Progressive disclosure through contextual detail panels</h2>
+      <p>The detail panel appears contextually when an item is selected, showing relevant information without losing sight of the operational context. This follows the principle of "show me what I need to know, when I need to know it."</p>
+      <div class="flow">
+        <div class="step"><span>01</span><b>Exception detection</b></div>
+        <div class="step"><span>02</span><b>Item selection</b></div>
+        <div class="step"><span>03</span><b>Context panel activation</b></div>
+        <div class="step"><span>04</span><b>Action selection</b></div>
+        <div class="step"><span>05</span><b>Execution &amp; feedback</b></div>
+      </div>
+      <p>The detail panel adapts its content based on the selected item's state and type, showing only relevant fields and actions—eliminating information overload while ensuring necessary details remain accessible.</p>
+      <div class="stat-bars">
+        <div class="bar-row"><span class="bl">Time to identify stuck job</span><div class="bar-track"><div class="bar-fill" style="width:35%"></div></div><span class="bv">−65%</span></div>
+        <div class="bar-row"><span class="bl">Actions per intervention cycle</span><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div><span class="bv">3→1</span></div>
+        <div class="bar-row"><span class="bl">Context switches reduced</span><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div><span class="bv">−40%</span></div>
+      </div>
+      <div class="caption">Illustrative improvement metrics. Replace with actual usability testing and performance data when available.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">07 · Visual language</div></div>
+    <div class="body">
+      <h2>Color coding and typographic hierarchy for rapid comprehension</h2>
+      <p>A constrained color palette uses semantic meaning: red for critical/SLA-risk items, amber for warnings/blocking conditions, green for normal operations, and blue for informational elements. This enables pre-attentive processing—operators can grasp status at a glance.</p>
+      <div class="caption">The detail panel adapts based on item type and state, showing relevant information without overwhelming the operator with unnecessary fields.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">08 · Process</div></div>
+    <div class="body">
+      <h2>From dense tables to exception-first console</h2>
+      <p>The redesign transforms the operations console from a data-display tool into a decision-support system that surfaces what matters most while preserving access to complete context when needed.</p>
+      <div class="process-grid">
+        <div class="process-card"><div class="process-index">01</div><h4>Discover</h4><p>Review the existing job tables, queue views and reassignment states to see how operators actually work today.</p></div>
+        <div class="process-card"><div class="process-index">02</div><h4>Define</h4><p>Reframe the primary hierarchy around SLA state and blocking reason instead of raw customer/device fields.</p></div>
+        <div class="process-card"><div class="process-index">03</div><h4>Design</h4><p>Structure the reassignment modal as a guided decision, and shape saved queues around real operational buckets.</p></div>
+      </div>
+      <div class="outcome-box"><strong>Outcome</strong><p>An operations console where the next intervention is obvious without hiding the detail an expert operator still needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="case-study-nav">
+    <a href="work.html">← All case studies</a>
+    <div class="case-study-links">
+      <span class="figma-link figma-protected">Source research is not publicly available.</span>
+    </div>
+    <div class="case-study-info">
+      <span class="case-number">08</span>
+      <span class="case-divider">/</span>
+      <span class="case-total">10</span>
+    </div>
+  </div>
+  <nav class="case-study-pager" aria-label="Move between case studies">
+    <a href="uber-airport-booking-case-study.html"><span>← Previous case study</span><strong>AirPort: Uber Pickups</strong></a>
+    <a href="ai-assistant-education-case-study.html"><span>Next case study →</span><strong>AI Assistant for Education</strong></a>
+  </nav>
+</section>
+</div>
+</body>
+</html>

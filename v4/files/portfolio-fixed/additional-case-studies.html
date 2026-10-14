@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case studies moved — Sahil Kundal</title>
+  <script>
+    const movedStudies = {
+      education: "ai-assistant-education-case-study.html",
+      "agentic-support": "agentic-customer-support-case-study.html",
+      elan: "elan-design-system-case-study.html",
+      workflow: "designing-my-workflow-case-study.html",
+      skinthesis: "skinthesis-case-study.html",
+      webfixxers: "webfixxers-ux-overhaul-case-study.html"
+    };
+    const target = movedStudies[window.location.hash.slice(1)];
+    window.location.replace(target || "work.html");
+  </script>
+</head>
+<body>
+  <main>
+    <h1>These case studies have moved</h1>
+    <p>Each project now has its own page. Choose a case study below, or browse all work.</p>
+    <ul>
+      <li><a href="ai-assistant-education-case-study.html">AI Assistant for Education</a></li>
+      <li><a href="agentic-customer-support-case-study.html">Next-Gen Agentic Customer Support Platform</a></li>
+      <li><a href="elan-design-system-case-study.html">ELAN — Design System</a></li>
+      <li><a href="designing-my-workflow-case-study.html">Designing my own workflow</a></li>
+      <li><a href="skinthesis-case-study.html">Skinthesis</a></li>
+      <li><a href="webfixxers-ux-overhaul-case-study.html">WebFixxers UX Overhaul</a></li>
+      <li><a href="work.html">All case studies</a></li>
+    </ul>
+  </main>
+</body>
+</html>

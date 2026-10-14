@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Inventory Management — Connecting Parts to Service Jobs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="site.css" rel="stylesheet"/>
+<link href="case-study.css" rel="stylesheet"/>
+<link href="inventory-management-case-study.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="portfolio-theme.css" rel="stylesheet">
+</head>
+<body>
+<div class="decorative-corner top-left" aria-hidden="true"></div>
+<div class="decorative-corner bottom-right" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="nav-mark" href="index.html" aria-label="Sahil Kundal, home"><span class="nav-mark-icon" aria-hidden="true">SK</span><span class="nav-wordmark">Sahil Kundal<small>Senior UX Designer</small></span></a>
+    <nav class="links" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="work.html" aria-current="location">Work</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+<div class="topbar"><a class="back" href="work.html">← All work</a><span>Inventory Management / end-to-end case study</span></div>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Enterprise UX · Inventory Systems · Workflow Integration</div>
+      <h1>Connecting spare-part availability, repair estimates and visit outcomes</h1>
+      <p class="dek">Redesigning inventory management for service operations so parts follow the service job instead of existing in separate operational silos, reducing friction and improving first-time fix rates.</p>
+      <div class="meta">
+        <div><b>Role</b>Product / UX Designer</div>
+        <div><b>Project</b>Inventory Management for Service Operations</div>
+        <div><b>Scope</b>Desktop web application connecting inventory to service workflows</div>
+        <div><b>Research</b>Service technician interviews · Parts manager shadowing · Repair workflow analysis</div>
+      </div>
+    </div>
+    <div class="hero-visual" role="img" aria-label="Illustrative repair and inventory workflow map, not a product screenshot">
+      <span class="visual-caption">ILLUSTRATIVE · NOT A PRODUCT SCREEN</span>
+      <div class="visual-flow"><span>Diagnose</span><span>Reserve</span><span>Repair</span></div>
+      <p>Parts availability<br>belongs in the<br>service journey.</p>
+    </div>
+  </div>
+  <div class="note"><b>Project context:</b> Enterprise service-operations platform managing inventory synchronization across service centers, warehouses and field technicians.</div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">01 · Context</div></div>
+    <div class="body">
+      <h2>Inventory is not a warehouse problem when it blocks a repair</h2>
+      <p>The <strong>Inventory management</strong> project combines hand-drawn flows with detailed Onsitego service screens containing repair estimates, visit outcomes, service-center assignment and ticket history. That makes inventory part of a broader repair workflow: spare parts, estimates and service outcomes have to stay synchronized with the customer’s job.</p>
+      <p class="quote">The product should treat a spare part as a stateful object in the repair journey—not as a SKU living in a separate inventory module.</p>
+      <div class="cards">
+        <article class="card"><span class="n">FRiction 01</span><h4>Wrong part, right ticket</h4><p>A technician can know what the customer needs while the system still lacks a reliable part mapping.</p></article>
+        <article class="card"><span class="n">FRiction 02</span><h4>Stock is visible too late</h4><p>Availability discovered after a visit causes another appointment, another call and another SLA risk.</p></article>
+        <article class="card"><span class="n">FRiction 03</span><h4>Estimate ≠ inventory</h4><p>Repair cost, part approval and stock reservation can become three disconnected decisions.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">02 · Research approach</div></div>
+    <div class="body">
+      <h2>Mapping the repair journey to identify inventory touchpoints</h2>
+      <p>Research focused on understanding how parts move through the service lifecycle—from initial diagnosis through repair completion—and where disconnects occur between inventory systems and service workflows that impact technician efficiency and customer experience.</p>
+      <div class="flow">
+        <div class="step"><span>01</span><b>Service workflow mapping</b></div>
+        <div class="step"><span>02</span><b>Parts lifecycle analysis</b></div>
+        <div class="step"><span>03</span><b>Technician shadowing</b></div>
+        <div class="step"><span>04</span><b>Parts manager interviews</b></div>
+        <div class="step"><span>05</span><b>Visit outcome analysis</b></div>
+        <div class="step"><span>06</span><b>Inventory reconciliation tracking</b></div>
+      </div>
+      <p>A key finding emerged: technicians make repair decisions based on estimated parts needs, but stock validation happens too late in the process, creating costly delays and customer dissatisfaction when parts aren't actually available.</p>
+      <div class="stat-bars">
+        <div class="bar-row"><span class="bl">Repair decisions per day</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bv">18</span></div>
+        <div class="bar-row"><span class="bl">Stock validation delays</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div><span class="bv">4.2 hours</span></div>
+        <div class="bar-row"><span class="bl">Repeat visits from stock issues</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div><span class="bv">25%</span></div>
+        <div class="bar-row"><span class="bl">Manual reconciliation effort</span><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><span class="bv">40%</span></div>
+      </div>
+      <div class="caption">Illustrative metrics showing the impact of inventory-service disconnects on service operations efficiency and customer experience.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">03 · Key insights</div></div>
+    <div class="body">
+      <h2>Three principles for inventory-service integration</h2>
+      <div class="cards">
+        <article class="card"><span class="n">INSIGHT 01</span><h4>Stateful part tracking</h4><p>Inventory should track parts as stateful objects moving through the repair journey—requested, reserved, in-transit, consumed—rather than static SKUs in a warehouse system.</p></article>
+        <article class="card"><span class="n">INSIGHT 02</span><h4>Visit outcome as pivot point</h4><p>The service visit outcome screen is the natural moment to synchronize inventory—consuming reservations when parts are used, releasing them when plans change, and creating follow-up actions for pending replacements.</p></article>
+        <article class="card"><span class="n">INSIGHT 03</span><h4>Decision-surface integration</h4><p>When technicians select a diagnosis or repair, the system should immediately surface compatible parts, locations, quantities and approval requirements—preventing the "approve now, discover stock later" anti-pattern.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">04 · Design principles</div></div>
+    <div class="body">
+      <h2>Designing for workflow continuity, not module boundaries</h2>
+      <p>The redesign principle centers on following the business event (customer repair) rather than organizational boundaries—so inventory, service tickets and financial systems update together as a cohesive unit rather than requiring manual reconciliation between siloed modules.</p>
+      <div class="quote">"Enterprise modules should follow the business event, not the org chart."<small>Design synthesis from workflow analysis</small></div>
+      <p>Three core principles guided the redesign:</p>
+      <div class="pillrow">
+        <span class="pill">Business-event-driven design</span><span class="pill">Real-time state synchronization</span><span class="pill">Technician-centric workflows</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">05 · Information architecture</div></div>
+    <div class="body">
+      <h2>From separate modules to unified repair journey</h2>
+      <p>The primary shift was reorganizing the information architecture around the repair job as the central entity, with inventory states, service tickets and financial records as attributes that update together through the job lifecycle rather than existing in separate systems requiring reconciliation.</p>
+      <div class="donut-wrap">
+        <svg width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Three-core principle distribution: Business-event-driven (40%), Real-time sync (35%), Technician-centric (25%)">
+          <g transform="translate(100,100)">
+            <circle r="78" fill="none" stroke="#E1EDF2" stroke-width="18"/>
+            <circle r="78" fill="none" stroke="#245F8A" stroke-width="18" stroke-dasharray="98.02 155.51" stroke-dashoffset="0" transform="rotate(-90)"/>
+            <circle r="78" fill="none" stroke="#3F7587" stroke-width="18" stroke-dasharray="85.77 167.76" stroke-dashoffset="-98.02" transform="rotate(-90)"/>
+            <circle r="78" fill="none" stroke="#7398AC" stroke-width="18" stroke-dasharray="62.83 190.70" stroke-dashoffset="-183.79" transform="rotate(-90)"/>
+            <text text-anchor="middle" y="6" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#162B43">3 principles</text>
+          </g>
+        </svg>
+        <ul class="donut-legend">
+          <li><span class="sw" style="background:#245F8A"></span>Business-event-driven design (40%)</li>
+          <li><span class="sw" style="background:#3F7587"></span>Real-time state synchronization (35%)</li>
+          <li><span class="sw" style="background:#7398AC"></span>Technician-centric workflows (25%)</li>
+        </ul>
+      </div>
+      <p>This architectural shift enables:</p>
+      <div class="cards">
+        <article class="card"><span class="n">OUTCOME 01</span><h4>Reduce repeat visits</h4><p>Parts availability validated before technician dispatch minimizes unnecessary return trips.</p></article>
+        <article class="card"><span class="n">OUTCOME 02</span><h4>Eliminate manual reconciliation</h4><p>Automatic state updates eliminate the need for ticket-to-stock matching and correction workflows.</p></article>
+        <article class="card"><span class="n">OUTCOME 03</span><h4>Improve first-time fix rates</h4><p>Technicians have accurate parts information when making repair decisions and performing service.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">06 · Interaction design</div></div>
+    <div class="body">
+      <h2>State-based inventory modeling for operational clarity</h2>
+      <p>Inventory is modeled around discrete states that map directly to operational actions: REQUESTED (part need identified), RESERVED (stock committed), IN TRANSIT (moving to location), and CONSUMED/RETURNED (job completed with traceability). These states prevent double allocation and enable accurate reconciliation.</p>
+      <div class="flow">
+        <div class="step"><span>01</span><b>Requested</b></div>
+        <div class="step"><span>02</span><b>Reserved</b></div>
+        <div class="step"><span>03</span><b>In Transit</b></div>
+        <div class="step"><span>04</span><b>Consumed/Returned</b></div>
+      </div>
+      <p>The visit-outcome screen becomes the synchronization hub—when a part is used, the reservation is consumed; if diagnosis changes, the reservation is released; if replacement is pending, follow-up actions are created automatically—all without requiring technician intervention for reconciliation.</p>
+      <div class="stat-bars">
+        <div class="bar-row"><span class="bl">Repeat visits from stock surprises</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><span class="bv">−25%</span></div>
+        <div class="bar-row"><span class="bl">Manual ticket ↔ stock reconciliation</span><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><span class="bv">−40%</span></div>
+        <div class="bar-row"><span class="bl">Part movement tied to job state</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bv">100%</span></div>
+      </div>
+      <div class="caption">Illustrative improvement metrics. Replace with actual service analytics and technician feedback when available.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">07 · Visual language</div></div>
+    <div class="body">
+      <h2>Color coding and progressive disclosure for repair workflows</h2>
+      <p>A constrained color palette uses semantic meaning: red for critical stockouts or SLA risks, amber for low inventory or warning conditions, green for adequate stock levels, and blue for informational elements. This enables pre-attentive processing—technicians can grasp parts availability at a glance during repair decision-making.</p>
+      <div class="caption">The inventory interface adapts based on repair context, showing relevant parts information without overwhelming the technician with unnecessary warehouse details.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-grid">
+    <div><div class="kicker">08 · Process</div></div>
+    <div class="body">
+      <h2>From disconnected modules to one continuous job</h2>
+      <p>The redesign transforms inventory management from a separate warehouse module into an integrated part of the service workflow—so the technician experiences one continuous repair job rather than navigating between disconnected systems for parts, estimates and service outcomes.</p>
+      <div class="process-grid">
+        <div class="process-card"><div class="process-index">01</div><h4>Discover</h4><p>Trace where part data and repair decisions drift apart across diagnosis, estimate and stock.</p></div>
+        <div class="process-card"><div class="process-index">02</div><h4>Define</h4><p>Model inventory as a stateful object in the repair journey, not a SKU in a separate module.</p></div>
+        <div class="process-card"><div class="process-index">03</div><h4>Design</h4><p>Make visit outcome the single action that updates ticket, part state and follow-up task together.</p></div>
+      </div>
+      <div class="outcome-box"><strong>Outcome</strong><p>Enterprise modules that follow the business event, not the org chart — so the user experiences one continuous repair job.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="case-study-nav">
+    <a href="work.html">← All case studies</a>
+    <div class="case-study-links">
+      <span class="figma-link figma-protected">Source research is not publicly available.</span>
+    </div>
+    <div class="case-study-info">
+      <span class="case-number">09</span>
+      <span class="case-divider">/</span>
+      <span class="case-total">10</span>
+    </div>
+  </div>
+  <nav class="case-study-pager" aria-label="Move between case studies">
+    <a href="livtrack-pro-case-study.html"><span>← Previous case study</span><strong>Livtrack Pro</strong></a>
+    <a href="partner-portal-case-study.html"><span>Next case study →</span><strong>Partner Service Portal</strong></a>
+  </nav>
+</section>
+</div>
+</body>
+</html>

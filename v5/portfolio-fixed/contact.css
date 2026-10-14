@@ -1,0 +1,102 @@
+.contact-page {
+  padding-block: clamp(4.5rem, 11vw, 9rem);
+}
+
+.contact-page > .eyebrow {
+  margin-bottom: 1.5rem;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(17rem, 0.8fr);
+  gap: clamp(3rem, 9vw, 8rem);
+  align-items: start;
+}
+
+.contact-layout h1 {
+  max-width: 13ch;
+  margin-bottom: 1.25rem;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.99;
+}
+
+.contact-copy {
+  max-width: 55ch;
+  margin-bottom: 2rem;
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}
+
+.contact-details {
+  position: relative;
+  padding-top: 8rem;
+}
+
+.contact-details::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7rem;
+  aspect-ratio: 1;
+  border: 1px solid rgb(49 92 77 / 25%);
+  background:
+    radial-gradient(circle at 22% 50%, var(--color-accent) 0 5px, transparent 6px),
+    radial-gradient(circle at 78% 28%, var(--color-sage) 0 5px, transparent 6px),
+    radial-gradient(circle at 70% 78%, var(--color-sage) 0 4px, transparent 5px),
+    radial-gradient(circle at 22% 50%, transparent 0 28%, rgb(167 83 56 / 34%) 29% 30%, transparent 31%),
+    radial-gradient(circle at 50% 50%, transparent 0 65%, rgb(49 92 77 / 30%) 66% 67%, transparent 68%);
+  content: "";
+  animation: contact-illustration-arrive 760ms 160ms both;
+  pointer-events: none;
+}
+
+@keyframes contact-illustration-arrive {
+  from { opacity: 0; transform: rotate(-10deg) scale(0.92); }
+  to { opacity: 1; transform: rotate(0) scale(1); }
+}
+
+.contact-details h2 {
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.025em;
+}
+
+.contact-details a {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  gap: 0.5rem;
+  align-items: start;
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-details a > span:first-child {
+  color: var(--color-sage);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.contact-details a:hover > span:nth-child(2) {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 760px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-details {
+    padding-top: 7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-details::before {
+    animation: none;
+  }
+}

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ELAN — building a design system for a service ecosystem — Sahil Kundal</title>
+  <meta name="description" content="Onsitego · Design Systems case study by Sahil Kundal, Senior UX Designer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="case-study.css">
+  <link rel="stylesheet" href="case-study-detail.css">
+    <link rel="stylesheet" href="elan-design-system-case-study.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="portfolio-theme.css" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="nav-mark" href="index.html" aria-label="Sahil Kundal, home"><span class="nav-mark-icon" aria-hidden="true">SK</span><span class="nav-wordmark">Sahil Kundal<small>Senior UX Designer</small></span></a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="work.html" aria-current="page">Work</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+<section class="view active" id="view-case-elan">
+    <div class="case case-page elan-case">
+      <a class="back-link" href="work.html"><svg viewBox="0 0 14 14"><polyline points="6,1 1,7 6,13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>Back to work</a>
+
+      <div class="cp-kicker">Case study 03 · Design Systems · Onsitego</div>
+      <h1 class="cp-title">ELAN — building a design system for a service ecosystem</h1>
+      <p class="cp-sub">A centralized Figma design system that turned a growing collection of consumer, field-service, retail and enterprise products into one reusable visual and interaction language.</p>
+
+      <div class="cp-meta">
+        <div class="cp-meta-item"><div class="label">My Role</div><div class="value">UX/UI Designer + Design System Owner</div></div>
+        <div class="cp-meta-item"><div class="label">Timeline</div><div class="value">Dec 2021 — Jan 2025</div></div>
+        <div class="cp-meta-item"><div class="label">Scope</div><div class="value">3 apps · 5–6 portals/dashboards</div></div>
+        <div class="cp-meta-item"><div class="label">Tool</div><div class="value">Figma</div></div>
+      </div>
+
+      <div class="elan-hero-media token-poster">
+        <div class="token-row">
+          <div class="t-label">Color</div>
+          <div class="swatch-row">
+            <div class="swatch" style="background:#242923"></div>
+            <div class="swatch" style="background:#A75338"></div>
+            <div class="swatch" style="background:#315C4D"></div>
+            <div class="swatch" style="background:#DCDDD6"></div>
+            <div class="swatch" style="background:#FFFEFA;border:1px solid #ddd"></div>
+          </div>
+        </div>
+        <div class="token-row">
+          <div class="t-label">Type scale</div>
+          <div class="type-sample" style="display:flex;align-items:baseline;gap:16px">
+            <div style="font-size:30px;font-weight:600">Aa</div>
+            <div style="font-size:22px;font-weight:600">Aa</div>
+            <div style="font-size:16px;font-weight:500">Aa</div>
+            <div style="font-size:13px;color:var(--ink-soft)">Aa</div>
+          </div>
+        </div>
+        <div class="token-row">
+          <div class="t-label">Spacing</div>
+          <div class="spacing-row">
+            <div style="width:8px;height:8px"></div>
+            <div style="width:14px;height:14px"></div>
+            <div style="width:20px;height:20px"></div>
+            <div style="width:28px;height:28px"></div>
+            <div style="width:40px;height:40px"></div>
+          </div>
+        </div>
+      </div>
+      <p class="research-note">Illustrative reconstruction of ELAN's foundation layer for this portfolio — not a screenshot of the internal Onsitego Figma file. The original ELAN v1.0 file is dated July 2021; the story below describes how the system evolved through my Onsitego tenure and how its reusable principles supported multiple product surfaces.</p>
+
+      <div class="cp-section">
+        <div class="cp-num">01</div>
+        <h3>The challenge wasn't inconsistency. It was repetition.</h3>
+        <p>Onsitego's product ecosystem was expanding across customer experiences, retailer tools, field-service applications and internal operations. Different products were solving the same interface problems independently: buttons, forms, cards, statuses, navigation, tables, service states and product/service imagery.</p>
+        <p>That created a familiar scaling problem. A designer could make a polished screen, but the next product would reinterpret the same pattern. Developers then implemented slightly different versions. Over time, small differences became a system-level problem: more design debt, more QA exceptions and more cognitive load for users moving between products.</p>
+        <div class="pull-quote">“The goal was not to make every screen look identical. The goal was to make every familiar interaction behave predictably.”</div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">02</div>
+        <h3>Start with an ecosystem audit</h3>
+        <p>I treated the existing products as the raw material for the system rather than starting from a blank component library. I reviewed recurring UI patterns, grouped visual duplicates, compared interaction states and identified where a single reusable rule could replace several one-off decisions.</p>
+        <div class="friction-grid cols-3">
+          <div class="friction-card"><div class="fc-num">01</div><h4>Inventory</h4><p>Collect recurring controls, layouts, icons, imagery and content patterns from existing products.</p></div>
+          <div class="friction-card"><div class="fc-num">02</div><h4>Consolidate</h4><p>Separate true product-specific behaviour from patterns that should become shared primitives.</p></div>
+          <div class="friction-card"><div class="fc-num">03</div><h4>Prioritise</h4><p>Build the highest-reuse components first, then extend the system as new workflows exposed new needs.</p></div>
+        </div>
+        <div class="callout"><strong>Design principle:</strong> I used real product problems to decide what belonged in ELAN. This kept the system grounded in actual workflows instead of becoming a collection of visually attractive but rarely-used components.</div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">03</div>
+        <h3>Build the foundation before the library</h3>
+        <p>The system was organised from the smallest visual decisions to the patterns users encountered repeatedly. The intent was to make a designer's decision path shorter: choose the foundation, compose the component, then assemble the product pattern.</p>
+        <div class="insight-grid">
+          <div class="insight-card"><div class="ic-num">FOUNDATIONS</div><h4>Visual language</h4><p>Color, typography, spacing, radius, hierarchy, iconography and imagery rules created a common visual grammar.</p></div>
+          <div class="insight-card"><div class="ic-num">COMPONENTS</div><h4>Reusable building blocks</h4><p>Buttons, inputs, selectors, cards, navigation, tabs, status treatments, tables and common controls were consolidated into reusable Figma patterns.</p></div>
+          <div class="insight-card"><div class="ic-num">PATTERNS</div><h4>Product-level behaviour</h4><p>Service requests, customer information, dashboards, forms, operational states and field workflows translated primitives into useful product structures.</p></div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">04</div>
+        <h3>Design for states, not just the happy path</h3>
+        <p>One of the most important shifts was treating a component as a behavioural object rather than a screenshot. A button isn't just its default appearance; an input isn't complete without validation; a service status isn't useful without a consistent semantic model.</p>
+        <div class="persona-block">
+          <div class="pb-label">Component thinking</div>
+          <h4>One component → many product moments</h4>
+          <div class="persona-block-cols">
+            <div><p><strong style="color:#fff">Visual states</strong></p><ul><li>Default</li><li>Hover / pressed</li><li>Focus</li><li>Disabled</li><li>Error / success where relevant</li></ul></div>
+            <div><p><strong style="color:#fff">UX behaviour</strong></p><ul><li>When to use it</li><li>What happens after interaction</li><li>Content constraints</li><li>Responsive behaviour</li><li>What not to do</li></ul></div>
+          </div>
+        </div>
+        <p>This reduced the tendency to recreate a component every time a new screen required a slightly different state. The system became a decision framework as much as a visual library.</p>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">05</div>
+        <h3>The asset library mattered too</h3>
+        <p>ELAN wasn't only a UI-component library. The Figma file also contained a broad visual asset ecosystem: appliance imagery, electronics, service imagery, brand references, promotional graphics, payment marks and utility illustrations.</p>
+        <p>That mattered because Onsitego's interface often had to communicate a physical product or a service context. Reusing an approved visual vocabulary made those experiences feel related even when the workflows were very different.</p>
+        <div class="elan-media-grid">
+          <figure>
+            <div class="state-strip">
+              <div class="state-chip default">Default</div>
+              <div class="state-chip hover">Hover</div>
+              <div class="state-chip focus">Focus</div>
+              <div class="state-chip disabled">Disabled</div>
+            </div>
+            <figcaption>Illustrative recreation of a component's state set — one button, four defined behaviours.</figcaption>
+          </figure>
+          <figure>
+            <div class="hub-diagram">
+              <svg width="220" height="150" viewBox="0 0 220 150">
+                <line x1="110" y1="75" x2="30" y2="20" stroke="#DCDDD6" stroke-width="1.5"/>
+                <line x1="110" y1="75" x2="190" y2="20" stroke="#DCDDD6" stroke-width="1.5"/>
+                <line x1="110" y1="75" x2="30" y2="130" stroke="#DCDDD6" stroke-width="1.5"/>
+                <line x1="110" y1="75" x2="190" y2="130" stroke="#DCDDD6" stroke-width="1.5"/>
+                <circle cx="110" cy="75" r="26" fill="#242923"/>
+                <text x="110" y="79" text-anchor="middle" fill="#fff" font-family="DM Sans" font-size="11" font-weight="700">ELAN</text>
+                <circle cx="30" cy="20" r="16" fill="#FFFEFA" stroke="#DCDDD6"/><text x="30" y="24" text-anchor="middle" font-size="8" font-family="IBM Plex Sans">Livtrack</text>
+                <circle cx="190" cy="20" r="16" fill="#FFFEFA" stroke="#DCDDD6"/><text x="190" y="24" text-anchor="middle" font-size="8" font-family="IBM Plex Sans">Dashboards</text>
+                <circle cx="30" cy="130" r="16" fill="#FFFEFA" stroke="#DCDDD6"/><text x="30" y="134" text-anchor="middle" font-size="8" font-family="IBM Plex Sans">SalesPro</text>
+                <circle cx="190" cy="130" r="16" fill="#FFFEFA" stroke="#DCDDD6"/><text x="190" y="134" text-anchor="middle" font-size="8" font-family="IBM Plex Sans">Website</text>
+              </svg>
+            </div>
+            <figcaption>One shared system, reused across four very different product surfaces.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">06</div>
+        <h3>Make the system useful across very different products</h3>
+        <p>The real test of ELAN was not how complete the Figma page looked. It was whether the same system could support different jobs without forcing them into the same UI.</p>
+        <div class="portal-grid">
+          <div class="portal-card"><div class="portal-badge">FIELD SERVICE</div><h4>Livtrack</h4><p>Fast, task-oriented workflows for service engineers. The system provided consistent controls and states while allowing the interaction density to remain appropriate for on-the-go work.</p><div class="highlight">Outcome across the ecosystem: service completion loops were reduced by 15% during the later optimization work.</div></div>
+          <div class="portal-card"><div class="portal-badge">OPERATIONS</div><h4>Enterprise dashboards</h4><p>Dense information environments needed stronger hierarchy, predictable tables, filters, statuses and scanning patterns without losing the underlying product language.</p><div class="highlight">Outcome: daily stakeholder dashboard usage increased by 30% after the broader dashboard improvements.</div></div>
+          <div class="portal-card"><div class="portal-badge">RETAIL / PARTNER</div><h4>SalesPro &amp; partner workflows</h4><p>Retailer-facing workflows could reuse the same interaction vocabulary while adapting content and task priorities to partner needs.</p><div class="highlight">Outcome: retailer platform interactions increased by 25% in the broader redesign work.</div></div>
+          <div class="portal-card"><div class="portal-badge">CUSTOMER EXPERIENCE</div><h4>Website &amp; service journeys</h4><p>Customer-facing experiences used the same principles for hierarchy, forms, cards and service communication, reducing the visual distance between touchpoints.</p><div class="highlight">Outcome: customer inquiries decreased by 10% after service-request and onboarding improvements.</div></div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">07</div>
+        <h3>From Figma library to team workflow</h3>
+        <p>A design system only creates leverage when people actually use it. I maintained the centralized Figma library, reused it in product work and evolved it as new requirements appeared. That created a feedback loop between system work and product work:</p>
+        <div class="why-ladder">
+          <div class="why-step root">A product exposes a repeated problem.</div>
+          <div class="why-step">The pattern is compared with existing ELAN components.</div>
+          <div class="why-step">If the need is broadly reusable, the component/pattern is standardised.</div>
+          <div class="why-step">The updated system is reused in subsequent product work.</div>
+          <div class="why-step final">Product work becomes the test environment for the design system.</div>
+        </div>
+        <p>By maintaining the system inside the same tool used for day-to-day design, the distance between “the design system” and “the product” stayed small. It was a living library, not a separate documentation project that designers had to remember to consult.</p>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">08</div>
+        <h3>Scale and measurable outcomes</h3>
+        <div class="stat-strip">
+          <div class="stat-box"><div class="stat-val">3</div><div class="stat-label">core applications supported</div></div>
+          <div class="stat-box"><div class="stat-val">5–6</div><div class="stat-label">enterprise portals / dashboards</div></div>
+          <div class="stat-box"><div class="stat-val">4 yrs</div><div class="stat-label">system evolution across my Onsitego tenure</div></div>
+          <div class="stat-box"><div class="stat-val">100%</div><div class="stat-label">of my product work designed around the centralized library once established</div></div>
+        </div>
+        <p>The strongest evidence of impact came from the products that the system supported rather than from a vanity component count. Across the broader product work, the ecosystem saw:</p>
+        <ul>
+          <li><strong>−15%</strong> field-service completion loops in Livtrack optimization.</li>
+          <li><strong>+30%</strong> daily stakeholder usage on enterprise dashboards.</li>
+          <li><strong>−10%</strong> customer inquiries after service-request and onboarding improvements.</li>
+          <li><strong>+25%</strong> retailer platform interactions in the partner/CRM redesign work.</li>
+          <li><strong>+20%</strong> net user satisfaction in the later Livtrack optimization work.</li>
+        </ul>
+        <p class="research-note">These are product-level outcomes from work conducted using the centralized design-system approach; they should not be interpreted as isolated causal effects of ELAN alone.</p>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">09</div>
+        <h3>What I would improve in a modern ELAN 2.0</h3>
+        <p>The original system was built around the needs and tooling of its time. If I were evolving it today, I would make the architecture even more explicit and developer-connected.</p>
+        <div class="insight-grid">
+          <div class="insight-card"><div class="ic-num">01</div><h4>Token-first architecture</h4><p>Formal semantic tokens for color, spacing, typography, elevation and component states, with clear primitive → semantic relationships.</p></div>
+          <div class="insight-card"><div class="ic-num">02</div><h4>Stronger documentation</h4><p>Component anatomy, usage guidance, accessibility requirements, content rules, responsive behaviour and do/don't examples beside every major component.</p></div>
+          <div class="insight-card"><div class="ic-num">03</div><h4>Design-to-code parity</h4><p>Closer mapping between Figma variables/components and front-end primitives so the system becomes a shared contract between design and engineering.</p></div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">10</div>
+        <h3>What this project changed about how I design</h3>
+        <p>ELAN changed my definition of a “good screen.” I stopped evaluating design only at the page level and started looking for the rules underneath the page: what repeats, what varies, what needs a state, what should be shared, and where consistency would genuinely reduce user effort.</p>
+        <p>That systems mindset now carries into my work on enterprise AI products. The same question applies whether I'm designing a button, a service workflow or an AI recommendation: <strong>what rule makes the next experience easier to design, build, understand and trust?</strong></p>
+      </div>
+
+      <div class="cp-nav-footer">
+        <a class="back-link" href="work.html" style="margin-bottom:0;"><svg viewBox="0 0 14 14"><polyline points="6,1 1,7 6,13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>All case studies</a>
+      </div>
+      <nav class="case-study-pager" aria-label="Move between case studies">
+        <a href="agentic-customer-support-case-study.html"><span>← Previous case study</span><strong>Next-Gen Agentic Customer Support</strong></a>
+        <a href="livtrack-pro-case-study.html"><span>Next case study →</span><strong>Livtrack Pro</strong></a>
+      </nav>
+    </div>
+  </section>
+  </main>
+  <footer class="site-footer container"><span>© 2026 Sahil Kundal</span><a href="contact.html">Say hello <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

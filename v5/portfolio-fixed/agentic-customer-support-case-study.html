@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Next-Gen Agentic Customer Support Platform — Sahil Kundal</title>
+  <meta name="description" content="Samsung · Enterprise · Agentic UX case study by Sahil Kundal, Senior UX Designer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="case-study.css">
+  <link rel="stylesheet" href="case-study-detail.css">
+    <link rel="stylesheet" href="agentic-customer-support-case-study.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="portfolio-theme.css" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="nav-mark" href="index.html" aria-label="Sahil Kundal, home"><span class="nav-mark-icon" aria-hidden="true">SK</span><span class="nav-wordmark">Sahil Kundal<small>Senior UX Designer</small></span></a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="work.html" aria-current="page">Work</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+<section class="view active" id="view-case-agentic">
+    <div class="case case-page">
+      <a class="back-link" href="work.html"><svg viewBox="0 0 14 14"><polyline points="6,1 1,7 6,13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>Back to work</a>
+
+      <div class="cp-kicker">Case study 02 · Enterprise · Agentic UX</div>
+      <h1 class="cp-title">Next-Gen Agentic Customer Support Platform</h1>
+      <p class="cp-sub">Replacing fragmented legacy workflows with four interconnected, explainable-AI portals for 25,000+ support staff across India and global markets.</p>
+
+      <div class="cp-meta">
+        <div class="cp-meta-item"><div class="label">My Role</div><div class="value">Lead UX Designer</div></div>
+        <div class="cp-meta-item"><div class="label">Scale</div><div class="value">25,000+ staff</div></div>
+        <div class="cp-meta-item"><div class="label">Timeline</div><div class="value">6 months, phase-wise</div></div>
+        <div class="cp-meta-item"><div class="label">Key outcome</div><div class="value" style="color:var(--coral);">60–80% time saved</div></div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">01</div>
+        <h3>The problem: four sources of operational friction</h3>
+        <p>Agents, field engineers, and legal staff were absorbing the cognitive load a system should have carried. Research and shadowing surfaced four concrete bottlenecks:</p>
+        <div class="friction-grid">
+          <div class="friction-card"><div class="fc-num">01</div><h4>High cognitive load</h4><p>Agents cross-referenced 4–5 disconnected portals per single ticket, hunting for purchase history and telemetry data by hand.</p></div>
+          <div class="friction-card"><div class="fc-num">02</div><h4>Slow hardware triage</h4><p>Line-On-Display (LOD) screen cases took 10–15 minutes per device to photograph via third-party camera apps and compile into manual PDF reports.</p></div>
+          <div class="friction-card"><div class="fc-num">03</div><h4>Image quality rejections</h4><p>15–20% of daily hardware cases were rejected instantly for motion blur or glare — restarting a multi-day repair cycle each time.</p></div>
+          <div class="friction-card"><div class="fc-num">04</div><h4>Paper-heavy legal CCM</h4><p>Manual data entry from physical court notices, paper courier tracking for Vakalatnama forms, and disconnected communication with external lawyers.</p></div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">02</div>
+        <h3>The paradigm shift: human-in-the-loop, not autonomous</h3>
+        <p>The core UX decision underneath all four portals: AI never acts alone. It synthesizes context and calculates a confidence score, presents it through a generative UI with evidence attached, and a human verifies and executes with one click.</p>
+        <div class="paradigm-box">
+          <div class="paradigm-toggle">
+            <button class="active" onclick="switchParadigm('old', this)">Old Manual Way</button>
+            <button onclick="switchParadigm('new', this)">New Agentic Model</button>
+          </div>
+          <div id="paradigmContent">
+            <ul class="paradigm-steps" id="paradigmSteps"></ul>
+            <span class="paradigm-badge" id="paradigmBadge"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">03</div>
+        <h3>Four interconnected portals</h3>
+        <p>One master AI orchestrator, four role-specific interfaces — each tailored to how that person actually works.</p>
+        <div class="portal-grid">
+          <div class="portal-card">
+            <div class="portal-badge">Field Engineers &amp; SAW Inspection Agents</div>
+            <h4>Nirnay — AI-Guided Hardware Triage</h4>
+            <p>Real-time on-device camera guidance with computer vision feedback, blocking blurred uploads before submission and routing verified defects automatically.</p>
+            <ul>
+              <li>On-device real-time camera gate — spatial framing guidance to eliminate glare</li>
+              <li>Pre-submission AI check blocks blurry images at point of capture</li>
+              <li>Confidence-based auto-routing: high confidence auto-approves, low confidence triggers 1-click human review</li>
+            </ul>
+          </div>
+          <div class="portal-card">
+            <div class="portal-badge">VOC Support Representatives</div>
+            <h4>Priority Desk — One-Click VOC Resolution</h4>
+            <p>Consolidates device history, chat logs, and sentiment analysis into a single timeline — replacing what used to require gathering details across 5 separate tabs.</p>
+            <ul>
+              <li>Predictive recommendations with confidence percentage and supporting evidence</li>
+              <li>Auto-generated communication drafts (SMS/email) ready for one-click send</li>
+            </ul>
+            <div class="highlight">Measured pilot impact: 60–80% reduction in VOC comprehension time, +112% SLA case closure rate.</div>
+          </div>
+          <div class="portal-card">
+            <div class="portal-badge">Legal Employee Reps &amp; External Counsel</div>
+            <h4>Sahay — Legal Case Management</h4>
+            <p>Modernized paper-heavy legal dispute operations via government e-Jagruti API integration and automated OCR notice ingestion.</p>
+            <ul>
+              <li>OCR scans physical legal notices into digital records in seconds</li>
+              <li>AI legal risk sensing recommends Contest vs. Settle/Dismiss from historical rulings</li>
+              <li>1-click Vakalatnama authorization &amp; courier dispatch routing</li>
+              <li>Smart Next-Date-of-Hearing briefing calendar for external counsel</li>
+            </ul>
+          </div>
+          <div class="portal-card">
+            <div class="portal-badge">SSO Command Center for 25,000+ Staff</div>
+            <h4>CS Agentic Hub — Master Orchestrator</h4>
+            <p>The central sign-on gateway and orchestrator. Staff construct custom UI workspaces on the fly using natural-language prompts, without leaving their command center.</p>
+            <ul>
+              <li>Daily Smart AI Planner splits workload into autonomous background tasks vs. items needing human approval</li>
+              <li>Generative UI renders live widgets from prompts like "show pending LOD approvals" or "render my CSAT summary"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">04</div>
+        <h3>Impact</h3>
+        <div class="stat-strip">
+          <div class="stat-box"><div class="stat-val">−70%</div><div class="stat-label">VOC creation time (~15 min → 3 min)</div></div>
+          <div class="stat-box"><div class="stat-val">+112%</div><div class="stat-label">SLA closure rate</div></div>
+          <div class="stat-box"><div class="stat-val">~0%</div><div class="stat-label">hardware triage rejection (from 15–20%)</div></div>
+          <div class="stat-box"><div class="stat-val">25k+</div><div class="stat-label">active enterprise staff</div></div>
+        </div>
+        <div class="chart-two-col">
+          <div class="chart-block">
+            <h4>Average handling time — legacy vs. agentic</h4>
+            <div class="cb-sub">Minutes spent per ticket across portals, before vs. after.</div>
+            <div class="chart-canvas-wrap"><canvas id="ahtChart"></canvas></div>
+          </div>
+          <div class="chart-block">
+            <h4>Hardware rejection drop vs. SLA growth</h4>
+            <div class="cb-sub">Six-month phase-wise rollout, pilot to scale.</div>
+            <div class="chart-canvas-wrap"><canvas id="effChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">05</div>
+        <h3>Research insights &amp; explainable AI trust</h3>
+        <div class="insight-grid">
+          <div class="insight-card"><div class="ic-num">INSIGHT 01</div><h4>Fatigued gatherers, not slow decision-makers</h4><p>Shadowing showed agents spent 70% of handling time just searching portals for context — so the fix was evidence-backed summary cards, not a better search tool.</p></div>
+          <div class="insight-card"><div class="ic-num">INSIGHT 02</div><h4>AI trust is fragile</h4><p>Agents ignored suggestions they couldn't see the reasoning behind. Every recommendation now shows an explicit confidence score, e.g. "94% confidence, based on 1,200 past tickets."</p></div>
+          <div class="insight-card"><div class="ic-num">INSIGHT 03</div><h4>One rigid UI fails every role</h4><p>Engineers need fast photo flows; lawyers need court briefings. Generative UI lets each role reshape their own workspace instead of forcing one layout on everyone.</p></div>
+        </div>
+        <p style="margin-top:8px;">That second insight became a routing rule applied across every portal:</p>
+        <div class="confidence-grid">
+          <div class="confidence-card high"><span class="cc-tag">AUTO / 1-CLICK</span><div class="cc-title">High confidence (85–100%)</div><p>Recommendation is pre-drafted from complete telemetry; agent executes with a single verification click.</p></div>
+          <div class="confidence-card low"><span class="cc-tag">IN-REVIEW</span><div class="cc-title">Low confidence (&lt;85%)</div><p>System flags missing data or discrepancies and routes directly to a human agent for manual verification.</p></div>
+          <div class="confidence-card gen"><span class="cc-tag">ON-DEMAND UI</span><div class="cc-title">Generative workspace</div><p>Natural-language prompts render custom widgets on demand, so agents query history without leaving their hub.</p></div>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <div class="cp-num">06</div>
+        <h3>Takeaway</h3>
+        <p>Every one of these portals solves the same underlying problem in a different costume: people were doing a machine's job of gathering evidence, and a machine was being trusted to do a human's job of deciding. Splitting those two apart — AI gathers and proposes, a human decides and executes — is what made 25,000 people trust a system they'd never fully hand control to.</p>
+      </div>
+
+      <div class="cp-nav-footer">
+        <a class="back-link" href="work.html" style="margin-bottom:0;"><svg viewBox="0 0 14 14"><polyline points="6,1 1,7 6,13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>All case studies</a>
+      </div>
+      <nav class="case-study-pager" aria-label="Move between case studies">
+        <a href="ai-assistant-education-case-study.html"><span>← Previous case study</span><strong>AI Assistant for Education</strong></a>
+        <a href="elan-design-system-case-study.html"><span>Next case study →</span><strong>ELAN — Design System</strong></a>
+      </nav>
+    </div>
+  </section>
+  </main>
+  <footer class="site-footer container"><span>© 2026 Sahil Kundal</span><a href="contact.html">Say hello <span aria-hidden="true">↗</span></a></footer>
+  <script>
+  const paradigmData = {
+    old: {
+      steps: [
+        "1. Search — agent manually queries 4–5 legacy databases.",
+        "2. Compile — manually copy-pastes data into Excel or PDFs.",
+        "3. Draft — writes responses or court summaries from scratch.",
+        "4. Decide — high average handling time, real burnout risk."
+      ],
+      badgeText: "High handling time (~15 mins/case)",
+      badgeStyle: "background:rgba(220,38,38,0.18); color:#f28b82;"
+    },
+    new: {
+      steps: [
+        "1. AI sub-agents synthesize context & calculate a confidence score.",
+        "2. Generative UI presents evidence and an actionable recommendation.",
+        "3. Human-in-the-loop — agent verifies and executes with 1-click approval.",
+        "4. Outcome — near-zero rejection rate, 60–80% lower handling time."
+      ],
+      badgeText: "Low handling time (~seconds/decision)",
+      badgeStyle: "background:rgba(49,92,77,0.25); color:#8fb3a8;"
+    }
+  };
+  function renderParadigm(key) {
+    const d = paradigmData[key];
+    const list = document.getElementById('paradigmSteps');
+    const badge = document.getElementById('paradigmBadge');
+    if (!list || !badge) return;
+    list.innerHTML = d.steps.map(s => `<li>${s}</li>`).join('');
+    badge.textContent = d.badgeText;
+    badge.setAttribute('style', d.badgeStyle);
+  }
+  function switchParadigm(key, btn) {
+    renderParadigm(key);
+    btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  // Charts for the agentic case study (created once, on first visit to that view)
+  let chartsBuilt = false;
+  function buildAgenticCharts() {
+    if (chartsBuilt || typeof Chart === 'undefined') return;
+    const ahtCtx = document.getElementById('ahtChart');
+    const effCtx = document.getElementById('effChart');
+    if (!ahtCtx || !effCtx) return;
+    chartsBuilt = true;
+    const inkSoft = '#57625A';
+    new Chart(ahtCtx, {
+      type: 'bar',
+      data: {
+        labels: ['VOC Ticket', 'LOD Triage', 'Legal Notice', 'SAW Review'],
+        datasets: [
+          { label: 'Legacy (mins)', data: [15, 12, 25, 10], backgroundColor: '#DCDDD6', borderRadius: 3 },
+          { label: 'Agentic (mins)', data: [3, 0.5, 2, 0.8], backgroundColor: '#A75338', borderRadius: 3 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top', labels: { font: { family: 'DM Sans', size: 11 }, color: inkSoft } } },
+        scales: {
+          y: { grid: { color: '#DDE0DA' }, ticks: { color: inkSoft, font: { size: 10 } } },
+          x: { grid: { display: false }, ticks: { color: inkSoft, font: { size: 10 } } }
+        }
+      }
+    });
+    new Chart(effCtx, {
+      type: 'line',
+      data: {
+        labels: ['M1 (Pilot)', 'M2', 'M3', 'M4', 'M5', 'M6 (Scale)'],
+        datasets: [
+          { label: 'Hardware rejection %', data: [18, 14, 8, 3, 1, 0.2], borderColor: '#A75338', backgroundColor: 'rgba(162,79,50,0.08)', fill: true, tension: 0.3 },
+          { label: 'SLA closure growth %', data: [100, 125, 150, 180, 200, 212], borderColor: '#315C4D', backgroundColor: 'transparent', borderDash: [5, 5], tension: 0.3 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top', labels: { font: { family: 'DM Sans', size: 11 }, color: inkSoft } } },
+        scales: {
+          y: { grid: { color: '#DDE0DA' }, ticks: { color: inkSoft, font: { size: 10 } } },
+          x: { grid: { display: false }, ticks: { color: inkSoft, font: { size: 10 } } }
+        }
+      }
+    });
+  }
+
+
+  renderParadigm('old');
+  buildAgenticCharts();
+  </script>
+</body>
+</html>

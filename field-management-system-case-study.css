@@ -1,0 +1,19 @@
+body {
+  --bg: var(--color-background);
+  --panel: var(--color-surface);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --line: var(--color-line);
+  --coral: var(--color-accent);
+  --sage: var(--color-sage);
+  --case-accent: var(--color-accent);
+  --visual-accent: var(--color-accent);
+}
+
+.hero-visual {
+  background-image:
+    linear-gradient(90deg, transparent 49.8%, var(--line) 50%, transparent 50.2%),
+    linear-gradient(transparent 49.8%, var(--line) 50%, transparent 50.2%),
+    linear-gradient(135deg, #EAF1F8, var(--panel));
+  background-size: 34px 34px, 34px 34px, auto;
+}
